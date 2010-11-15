@@ -1,0 +1,107 @@
+/* for the whole page */
+body {
+	margin-top: 20px;
+	color: #000;
+	border: 0;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 10pt;
+}
+
+h2 {margin: 0px 0px 10px 0px;}
+
+p {margin: 0px 0px 20px 0px;}
+
+a:link {text-decoration: none; color:#000}
+a:visited {text-decoration: none; color:#000}
+a:hover {text-decoration: underline;}
+a:active {text-decoration: underline;}
+
+/* Container of the page */
+#main_div {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	-o-border-radius: 0px 50px 0px 50px;
+	-icab-border-radius: 0px 50px 0px 50px;
+	-khtml-border-radius: 0px 50px 0px 50px;
+	-moz-border-radius: 0px 50px 0px 50px;
+	border-radius: 0px 50px 0px 30px;
+	-o-box-shadow: 10px -5px 15px #c0c0c0;
+	-moz-box-shadow: 10px -5px 15px #c0c0c0;
+	-khtml-box-shadow: 10px -5px 15px #c0c0c0;
+	-webkit-box-shadow: 10px -5px 15px #c0c0c0;
+	box-shadow: 10px -5px 15px #c0c0c0;
+	background: #f8f8f8;
+}
+
+#main_div_2 {
+	-o-border-radius: 0px 50px 0px 50px;
+	-icab-border-radius: 0px 50px 0px 50px;
+	-khtml-border-radius: 0px 50px 0px 50px;
+	-moz-border-radius: 0px 50px 0px 50px;
+	border-radius: 0px 50px 0px 30px;
+	-o-box-shadow: -10px 5px 15px #c0c0c0;
+	-moz-box-shadow: -10px 5px 15px #c0c0c0;
+	-khtml-box-shadow: -10px 5px 15px #c0c0c0;
+	-webkit-box-shadow: -10px 5px 15px #c0c0c0;
+	box-shadow: -10px 5px 15px #c0c0c0;
+}
+
+/* Header and div contained in it (title and top_menu) */
+#header {
+	text-align: right;
+}
+
+#title {
+	padding: 20px 20px 0px 20px;
+}
+
+#title h1 {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+#top_menu {
+	padding: 2px 20px 2px 20px;
+	background: #383838;
+	background: -moz-linear-gradient (top, #383838, #686868);
+	background: -webkit-gradient(linear, center top, center bottom, from(#383838), to(#686868));
+	color: #fff;
+	
+}
+
+#top_menu a:link {text-decoration: none; color:#fff}
+#top_menu a:visited {text-decoration: none; color:#fff}
+#top_menu a:hover {text-decoration: underline;}
+#top_menu a:active {text-decoration: underline;}
+
+#top_menu ul {list-style-type: none;}
+
+/* Central div : content */
+#center {
+	padding: 0px;
+	overflow: hidden;
+	background: #0018a0;
+}
+
+#left_column {
+	float: left;
+	width: 180px;
+	padding: 10px;
+	overflow: hidden;
+	color: #fff;
+}
+
+#right_column {
+	float: right;
+	width: 780px;
+	padding: 10px;
+	overflow: hidden;
+	background: #f8f8f8;
+	color: #000;
+}
+
+/* footer */
+#footer {
+	padding: 5px 20px 5px 29px;
+}

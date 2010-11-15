@@ -1,0 +1,8 @@
+# ignore swap files from vim
+.*.sw[a-z]
+
+# ignore compiled files :
+*.pyc
+
+# ignore the database
+*.db

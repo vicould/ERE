@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>{% block title %}{% endblock %}Site de l'ERE, Équipe des Représentants des Élèves</title>
+    <meta http-equiv="Content-Type" content="text/html, charset=UTF-8" /> 
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style.css" media="screen" />
+    <link rel="icon" href="{{ MEDIA_URL }}favicon.png" />
+    {% block extrahead %}{% endblock %}
+  </head>
+  <body>
+    <div id="main_div">
+      <div id="main_div_2">
+        <div id="header">
+          <div id="title">
+            <h1><a href="/">ERE</a></h1>
+            Équipe des Représentants des Élèves
+          </div>
+          <div id="top_menu">
+            <a href="/categories">Category</a>&nbsp;&nbsp;  
+            <a href="/">Accueil</a> 
+          </div>
+        </div>
+        <div id="center">
+          <div id="left_column">
+            Lorem
+            Ipsum
+          </div>
+          <div id="right_column">
+              {% block content %}{% endblock %}
+          </div>
+        </div>
+        <div id="footer">
+          Footer
+        </div>
+      </div>
+    </div>
+  </body>
+ </html>
