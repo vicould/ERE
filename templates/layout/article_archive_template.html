@@ -1,19 +1,32 @@
 {% extends 'layout/base.html' %}
 
+{% block extracss %}
+<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/list.css" media="screen" />
+{% endblock %}
+
 {% block content %}
 <div id="archive">
-{% if object_list %}
-	{% for article in object_list %}
-	<div class="article">
-    <h2><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h2>
-    <div class="article_informations">Écrit par <a href="{{ article.author.get_absolute_url }}">{{ article.author }}</a> dans <a href="{{ article.category.get_absolute_url }}">{{ article.category }}</a></div>
-		<p class="article_abstract">{{ article.extract }}</p>
-	</div>
-	{% endfor %}
-{% else %}
+  {% if object_list %}
+  {% for article in object_list %}
+  <div class="article_{% cycle 'even' 'odd' %}">
+    <div class="content_list">
+      <h2><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h2>
+      <div class="article_informations">
+        Écrit par <a href="{{ article.author.get_absolute_url }}">{{ article.author }}</a> dans <a href="{{ article.category.get_absolute_url }}">{{ article.category }}</a>
+      </div>
+      <p class="article_abstract">{{ article.extract }}</p>
+    </div>
+    <div class="date_list">
+      <span class="day">{{ article.date|date:"d" }}</span>
+      <span class="month"><a href="/{{ article.date.year }}/{{ article.date|date:"m" }}">{{ article.date|date:"M" }}</a></span>
+      <span class="year"><a href="/{{ article.date.year }}">{{ article.date.year }}</a></span>    
+    </div>
+  </div>
+  {% endfor %}
+  {% else %}
   <p id="no_archive_found">
-    Désolé, il n'y a pas encore d'article pour ce{% block archive_type %}{% endblock %}.
+  Désolé, il n'y a pas encore d'article pour ce{% block archive_type %}{% endblock %}.
   </p>
-{% endif %}
+  {% endif %}
 </div>
 {% endblock %}

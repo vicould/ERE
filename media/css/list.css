@@ -1,0 +1,40 @@
+/* Extends the master style in order to format the articles list */
+.content_list {
+	width: 600px;
+	float: left;
+}
+
+.date_list {
+	width: 80px;
+	float: right;
+	position: relative;
+	display: block;
+	text-align: left;
+}
+
+.day {
+	padding: 2px 0px;
+	font-size: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+
+.month {
+	padding: 2px 20px 2px 0px;
+	text-align: center;
+	font-size: 20px;
+	line-height: 20px;
+}
+
+.year {
+	padding: 0px 0px 40px 0px;
+	-webkit-transform:rotate(90deg);
+	-moz-transform:rotate(90deg);
+	-o-transform: rotate(90deg);
+	display:block;
+	bottom: 6px;
+	right: 0;
+	position: absolute;
+	letter-spacing: 6px;
+
+}

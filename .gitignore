@@ -5,4 +5,4 @@
 *.pyc
 
 # ignore the database
-*.db
+#*.db

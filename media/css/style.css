@@ -21,6 +21,7 @@ a:active {text-decoration: underline;}
 	width: 1000px;
 	margin-left: auto;
 	margin-right: auto;
+	border: 1px solid #383838;
 	-o-border-radius: 0px 50px 0px 50px;
 	-icab-border-radius: 0px 50px 0px 50px;
 	-khtml-border-radius: 0px 50px 0px 50px;
@@ -32,19 +33,6 @@ a:active {text-decoration: underline;}
 	-webkit-box-shadow: 10px -5px 15px #c0c0c0;
 	box-shadow: 10px -5px 15px #c0c0c0;
 	background: #f8f8f8;
-}
-
-#main_div_2 {
-	-o-border-radius: 0px 50px 0px 50px;
-	-icab-border-radius: 0px 50px 0px 50px;
-	-khtml-border-radius: 0px 50px 0px 50px;
-	-moz-border-radius: 0px 50px 0px 50px;
-	border-radius: 0px 50px 0px 30px;
-	-o-box-shadow: -10px 5px 15px #c0c0c0;
-	-moz-box-shadow: -10px 5px 15px #c0c0c0;
-	-khtml-box-shadow: -10px 5px 15px #c0c0c0;
-	-webkit-box-shadow: -10px 5px 15px #c0c0c0;
-	box-shadow: -10px 5px 15px #c0c0c0;
 }
 
 /* Header and div contained in it (title and top_menu) */
@@ -62,6 +50,7 @@ a:active {text-decoration: underline;}
 }
 
 #top_menu {
+	height: 1em;
 	padding: 2px 20px 2px 20px;
 	background: #383838;
 	background: -moz-linear-gradient (top, #383838, #686868);
@@ -70,18 +59,34 @@ a:active {text-decoration: underline;}
 	
 }
 
+#top_menu a {
+	width: 6em;
+	padding: 0.2em 0.6em;
+}
+
 #top_menu a:link {text-decoration: none; color:#fff}
 #top_menu a:visited {text-decoration: none; color:#fff}
 #top_menu a:hover {text-decoration: underline;}
 #top_menu a:active {text-decoration: underline;}
 
-#top_menu ul {list-style-type: none;}
+#top_menu ul {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	float:left;
+	list-style-type: none;
+}
+
+#top_menu li {
+	display: inline;
+}
 
 /* Central div : content */
 #center {
+	width: 100%;
 	padding: 0px;
 	overflow: hidden;
-	background: #0018a0;
+	/* background: #0018a0; */
 }
 
 #left_column {
@@ -89,7 +94,7 @@ a:active {text-decoration: underline;}
 	width: 180px;
 	padding: 10px;
 	overflow: hidden;
-	color: #fff;
+	color: #000;
 }
 
 #right_column {
@@ -103,5 +108,7 @@ a:active {text-decoration: underline;}
 
 /* footer */
 #footer {
-	padding: 5px 20px 5px 29px;
+	padding: 15px 15px 15px 15px;
+	border-top: 20px solid #0018a0;
+	overflow: hidden;
 }
