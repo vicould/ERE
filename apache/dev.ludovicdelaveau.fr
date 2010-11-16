@@ -1,0 +1,18 @@
+<VirtualHost *:80>
+	ServerName dev.ludovicdelaveau.fr
+	ServerAdmin webmaster@ludovicdelaveau.fr
+
+	AliasMatch /(media/[[\w]+/]*[^/]*\.css) /usr/share/pyshared/django/contrib/admin/$1
+	AliasMatch /([^/]*\.css) /opt/repos/django/ere/media/css/$1
+	
+	<Directory /opt/repos/django/ere/media/>
+		Order deny,allow
+		Allow from all
+	</Directory>
+
+	WSGIScriptAlias / /opt/repos/django/ere/apache/ere.wsgi
+
+	ErrorLog /var/log/apache2/error.log
+	CustomLog /var/log/apache2/access.log combined
+	LogLevel warn
+</VirtualHost>
