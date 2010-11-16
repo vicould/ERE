@@ -1,4 +1,4 @@
-from blog.models import Article, Author, Tag, User, Category, Page
+from ere.blog.models import Article, Author, Tag, User, Category, Page
 from django.contrib import admin
 
 

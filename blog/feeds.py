@@ -1,5 +1,5 @@
 from django.contrib.syndication.views import Feed
-from  blog.models import Article
+from  ere.blog.models import Article
 
 class RecentArticlesFeed(Feed):
     title = "Les derniers articles du site de l'ERE"

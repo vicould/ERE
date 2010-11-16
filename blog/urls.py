@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import *
 from django.views.generic import date_based
-from blog.models import Article
-from blog.feeds import RecentArticlesFeed
+from ere.blog.models import Article
+from ere.blog.feeds import RecentArticlesFeed
 
 year_re = '(?P<year>\d{4})'
 month_re = '(?P<month>\d{2})'
