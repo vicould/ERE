@@ -1,0 +1,9 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+{% for article in related_articles_list %}
+<h2><a href="{{ article.title.get_absolute_url }}">{{ article.title }}</a></h2>
+{{ article.date }}<a href="{{ article.author.get_absolute_power }}">{{ article.author }}</a>
+<p class="extract">{{ article.extract }}</p>
+{% endfor %}
+{% endblock %}
