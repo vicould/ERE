@@ -1,8 +1,9 @@
 /* for the whole page */
 body {
-	margin-top: 20px;
+	margin: 0px;
+	padding: 0px;
 	color: #000;
-	border: 0;
+	display: block;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 10pt;
 }
@@ -13,31 +14,38 @@ p {margin: 0px 0px 20px 0px;}
 
 a:link {text-decoration: none; color:#000}
 a:visited {text-decoration: none; color:#000}
-a:hover {text-decoration: underline;}
-a:active {text-decoration: underline;}
+a:hover {
+	text-decoration: none;
+	color: #ff7000;
+}
+a:active {
+	text-decoration: none;
+	color: #ff7000;
+}
 
-/* Container of the page */
-#main_div {
+/* wrapper for the whole file */
+#page {
 	width: 1000px;
-	margin-left: auto;
-	margin-right: auto;
-	border: 1px solid #383838;
-	-o-border-radius: 0px 50px 0px 50px;
-	-icab-border-radius: 0px 50px 0px 50px;
-	-khtml-border-radius: 0px 50px 0px 50px;
-	-moz-border-radius: 0px 50px 0px 50px;
-	border-radius: 0px 50px 0px 30px;
-	-o-box-shadow: 10px -5px 15px #c0c0c0;
-	-moz-box-shadow: 10px -5px 15px #c0c0c0;
-	-khtml-box-shadow: 10px -5px 15px #c0c0c0;
-	-webkit-box-shadow: 10px -5px 15px #c0c0c0;
-	box-shadow: 10px -5px 15px #c0c0c0;
+	margin: 0px auto;
+	-o-border-radius: 0px 0px 50px 50px;
+	-icab-border-radius: 0px 0px 50px 50px;
+	-khtml-border-radius: 0px 0px 50px 50px;
+	-moz-border-radius: 0px 0px 50px 50px;
+	border-radius: 0px 0px 50px 50px;
+	-o-box-shadow: -10px 5px 15px #c0c0c0;
+	-moz-box-shadow: -10px 5px 15px #c0c0c0;
+	-khtml-box-shadow: -10px 5px 15px #c0c0c0;
+	-webkit-box-shadow: -10px 5px 15px #c0c0c0;
+	box-shadow: -10px 5px 15px #c0c0c0;
 	background: #f8f8f8;
 }
 
 /* Header and div contained in it (title and top_menu) */
 #header {
+	width: 100%;
 	text-align: right;
+	float: right;
+	background: #fff;
 }
 
 #title {
@@ -45,45 +53,60 @@ a:active {text-decoration: underline;}
 }
 
 #title h1 {
-	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 0px 0px;
+	margin: 0px;
+	padding: 0px;
 }
 
 #top_menu {
-	height: 1em;
-	padding: 2px 20px 2px 20px;
+	height: 30px;
 	background: #383838;
 	background: -moz-linear-gradient (top, #383838, #686868);
 	background: -webkit-gradient(linear, center top, center bottom, from(#383838), to(#686868));
 	color: #fff;
-	
+	text-transform: uppercase;
 }
-
-#top_menu a {
-	width: 6em;
-	padding: 0.2em 0.6em;
-}
-
-#top_menu a:link {text-decoration: none; color:#fff}
-#top_menu a:visited {text-decoration: none; color:#fff}
-#top_menu a:hover {text-decoration: underline;}
-#top_menu a:active {text-decoration: underline;}
 
 #top_menu ul {
-	width: 100%;
 	margin: 0px;
 	padding: 0px;
-	float:left;
+	vertical-align: center;
 	list-style-type: none;
 }
 
 #top_menu li {
+	float: right;
+	margin: 0px;
+	padding: 0px;
+	border-left: 1px solid #c8c8c8;
 	display: inline;
+}
+
+#top_menu a {
+	height: 30px;
+	line-height: 30px;
+	padding: 0px 10px;
+}
+
+#top_menu a:link {text-decoration: none; color:#fff}
+#top_menu a:visited {text-decoration: none; color:#fff}
+#top_menu a:hover {
+	text-decoration: none;
+	color: #ff7000;
+}
+
+#top_menu a:active {
+	text-decoration: none;
+	color: #ff7000;
+}
+
+/* Wrapper for the content and the footer */
+#main_wrapper {
+	clear: both;
+	margin: auto;
 }
 
 /* Central div : content */
 #center {
-	width: 100%;
 	padding: 0px;
 	overflow: hidden;
 	/* background: #0018a0; */
@@ -91,11 +114,28 @@ a:active {text-decoration: underline;}
 
 #left_column {
 	float: left;
-	width: 180px;
-	padding: 10px;
+	width: 160px;
+	padding: 0px;
 	overflow: hidden;
 	color: #000;
+	/* border-right: 20px solid #0018a0;
+	border-right: 20px -moz-linear-gradient(top, #0018a0, #0018d0);
+	border-right: 20px -webkit-gradient(linear, center top, center bottom, from(#0018a0), to(#0018d0)); */
 }
+
+#left_menu {
+	float: left;
+	width: 140px;
+}
+
+/* #left_border {
+	float: right;
+	width: 20px;
+	height: 80px;
+	background: #0018a0;
+	background: -moz-linear-gradient(left, #0018a0, #0018d0);
+	background: -webkit-gradient(linear, left center, right center, from(#0018a0), to(#0018d0));
+} */
 
 #right_column {
 	float: right;
@@ -107,8 +147,10 @@ a:active {text-decoration: underline;}
 }
 
 /* footer */
-#footer {
+#bottom_border {
+}
+
+#bottom {
 	padding: 15px 15px 15px 15px;
-	border-top: 20px solid #0018a0;
 	overflow: hidden;
 }

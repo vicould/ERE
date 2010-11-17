@@ -9,7 +9,7 @@
     {% block extrahead %}{% endblock %}
   </head>
   <body>
-    <div id="main_div">
+    <div id="page">
       <div id="header">
         <div id="title">
           <h1><a href="/">ERE</a></h1>
@@ -17,21 +17,31 @@
         </div>
         <div id="top_menu">
           <ul>
-            <li><a href="/categories">Category</a></li>
             <li><a href="/">Accueil</a></li>
+            <li><a href="/categories">Category</a></li>
           </ul>
         </div>
       </div>
-      <div id="center">
-        <div id="left_column">
-          Lorem
-          Ipsum
+      <div id="main_wrapper">
+        <div id="center">
+          <div id="left_column">
+            <div id="left_menu">
+              Lorem
+              Ipsum
+            </div>
+            <div id="left_border">
+            </div>
+          </div>
+          <div id="right_column">
+              {% block content %}{% endblock %}
+          </div>
         </div>
-        <div id="right_column">
-            {% block content %}{% endblock %}
+        <div id="footer">
+          <div id="bottom_border">
+          </div>
+          <div id="bottom">
+          </div>
         </div>
-      </div>
-      <div id="footer">
       </div>
     </div>
   </body>
