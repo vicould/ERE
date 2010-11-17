@@ -59,8 +59,10 @@ def categories_index(request):
                               {'categories_list' : categories_list}, context_instance=RequestContext(request))
 
 def category_detail(request, category_name):
-    related_articles_list = Article.objects.filter(category__name=category_name)
-    related_pages_list = Page.objects.filter(category__name=category_name)
+    related_articles_list = \
+        Article.objects.filter(category__name=category_name).order_by('title')
+    related_pages_list = \
+        Page.objects.filter(category__name=category_name).order_by('title')
     return render_to_response('blog/category_detail.html',
                               {'related_articles_list' : related_articles_list,
                                'related_pages_list' : related_pages_list}, context_instance=RequestContext(request))
