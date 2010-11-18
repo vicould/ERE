@@ -69,7 +69,6 @@ a:active {
 #top_menu ul {
 	margin: 0px;
 	padding: 0px;
-	vertical-align: center;
 	list-style-type: none;
 }
 
@@ -91,12 +90,12 @@ a:active {
 #top_menu a:visited {text-decoration: none; color:#fff}
 #top_menu a:hover {
 	text-decoration: none;
-	color: #ff7000;
+	color: #0078ff;
 }
 
 #top_menu a:active {
 	text-decoration: none;
-	color: #ff7000;
+	color: #0078ff;
 }
 
 /* Wrapper for the content and the footer */

@@ -5,7 +5,20 @@ h2 {
 	padding: 0px;
 }
 
+.article_even {
+	padding: 20px 0px;
+}
+
+.article_odd {
+	padding: 20px 0px;
+}
+
+.article_odd a:hover {
+	color: #0078ff;
+}
+
 .content_list {
+	padding: 0px 0px 20px 0px;
 	width: 600px;
 	float: left;
 }
@@ -13,6 +26,7 @@ h2 {
 .article_informations {
 	margin-bottom: 10px;
 	color: #b0b0b0;
+	font-size: 10px;
 }
 
 .article_informations a {
@@ -24,8 +38,33 @@ h2 {
 }
 
 .article_abstract {
-	padding-left: 20px;
+	margin: 0px 0px 10px 0px;
+	padding: 0px 0px 0px 20px;
 }
+
+/* Tags */
+.article_tags {
+	margin: 0px;
+	padding: 0px;
+	display: inline;
+	text-align: left;
+	text-transform: uppercase;
+}
+
+.tags_word {
+	color: #b0b0b0;
+	text-transform: none;
+}
+
+.article_even .article_tags a {
+	color: #ff7000;
+}
+
+.article_even .article_tags a:hover {
+	color: #000;
+}
+
+/* Date hack */
 
 .date_list {
 	width: 80px;
@@ -40,6 +79,13 @@ h2 {
 	font-size: 50px;
 	line-height: 50px;
 	text-align: center;
+}
+
+.article_even .day {
+	color: #ff7000;
+}
+
+.article_odd .day {
 }
 
 .month {
@@ -61,3 +107,4 @@ h2 {
 	letter-spacing: 6px;
 
 }
+

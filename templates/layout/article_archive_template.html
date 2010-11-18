@@ -17,6 +17,12 @@
         {% endblock %}
       </div>
       <p class="article_abstract">{{ article.extract }}</p>
+      <div class="article_tags">
+        <span class="tags_word">Tags :</span>
+        {% for tag in article.tag.all %}
+            <a href="{{ tag.get_absolute_url }}">{{ tag.name }}</a>
+        {% endfor %}
+      </div>
     </div>
     <div class="date_list">
       <span class="day">{{ article.date|date:"d" }}</span>
