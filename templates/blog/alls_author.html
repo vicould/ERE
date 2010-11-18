@@ -1,16 +1,18 @@
 {% extends 'layout/base.html' %}
 
+{% block extrahead %}
+<link rel="stylesheet" type="text/html" href="{{ MEDIA_URL }}/css/author_list.css"  media="screen" />
+{% endblock %}
+
 {% block content %}
 {% if author_list %}
-<ul>
 	{% for author in author_list %}
-		<li>
-      <a href="{{ author.get_absolute_url }}">{{ author.user.username }}</a>
-			<div class="author_name">{{ author.first_name }} {{ author.last_name }}</div>
-			<div class="author_bio">{{ author.bio }}</div>
-		</li>
-	{% endfor %}
-</ul>
+  <div class="author">
+    <h2><a href="{{ author.get_absolute_url }}">{{ author.user.username }}</a></h2>
+    <div class="author_name">{{ author.first_name }} {{ author.last_name }}</div>
+    <div class="author_bio">{{ author.bio }}</div>
+  </div>
+  {% endfor %}
 {% else %}
 <p>Sorry this blog has no author ...</p>
 {% endif %}
