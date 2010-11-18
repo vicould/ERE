@@ -2,17 +2,16 @@
 
 {% block content %}
 
-<h2>Blog entries</h2>
+<h2>Articles de blog</h2>
 {% for article in related_articles_list %}
   <h3><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
-  {{ article.date|date:"d F y" }} par <a href="{{ article.author.get_absolute_url }}">{{ article.author }}</a>
+  {{ article.date|date:"d F Y" }} par <a href="{{ article.author.get_absolute_url }}">{{ article.author }}</a>
   <p class="extract">{{ article.extract }}</p>
 {% endfor %}
 
-<h2>Pages entries</h2>
+<h2>Pages</h2>
 {% for page in related_pages_list %}
   <h3><a href="{{ page.get_absolute_url }}">{{ page.title }}</a></h3>
-  <a href="{{ page.author.get_absolute_url }}">{{ page.author }}</a>
   <p class="extract">{{ page.extract }}</p>
 {% endfor %}
 

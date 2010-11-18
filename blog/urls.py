@@ -10,7 +10,7 @@ tags_string = 'tags'
 authors_string = 'authors'
 author_re = '(?P<author>\w+)'
 pages_string = 'pages'
-page_re = '(?P<title>.+)'
+page_re = '(?P<page_title>.+)'
 category_string = 'categories'
 category_re = '(?P<category_name>.+)'
 

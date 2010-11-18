@@ -12,7 +12,9 @@
     <div class="content_list">
       <h2><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h2>
       <div class="article_informations">
-        Écrit par <a href="{{ article.author.get_absolute_url }}">{{ article.author }}</a> dans <a href="{{ article.category.get_absolute_url }}">{{ article.category }}</a>
+        {% block informations %}
+        écrit par <a href="{{ article.author.get_absolute_url }}">{{ article.author }}</a> dans <a href="{{ article.category.get_absolute_url }}">{{ article.category }}</a>
+        {% endblock %}
       </div>
       <p class="article_abstract">{{ article.extract }}</p>
     </div>

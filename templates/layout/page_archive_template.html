@@ -1,0 +1,29 @@
+{% extends 'layout/base.html' %}
+
+{% block extracss %}
+<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/page_list.css" media="screen" />
+{% endblock %}
+
+{% block content %}
+<div id="archive">
+  {% if pages_list %}
+  {% for page in pages_list %}
+  <div class="page{% cycle 'even' 'odd' %}">
+    <div class="content_list">
+      <h2><a href="{{ page.get_absolute_url }}">{{ page.title }}</a></h2>
+      <div class="page_informations">
+        {% block informations %}
+          dans <a href="{{ page.category.get_absolute_url }}">{{ page.category }}</a>
+        {% endblock %}
+      </div>
+      <p class="page_abstract">{{ page.extract }}</p>
+    </div>
+  </div>
+  {% endfor %}
+  {% else %}
+  <p id="no_archive_found">
+  Désolé, il n'y a pas encore de page.
+  </p>
+  {% endif %}
+</div>
+{% endblock %}

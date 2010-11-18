@@ -1,22 +1,7 @@
-{% extends 'layout/base.html' %}
+{% extends 'layout/article_archive_template.html' %}
 
-{% block content %}
-{% if publications_list %}
-<ul>
-  {% for article in publications_list %}
-  <li>
-    <p><a href="/blog/{{ article.date.year }}/{{ article.date.month }}/{{ article.id}}">{{ article.title }}</a></p>
-    <p>{{ article.date }}</p>
-    <p>{{ article.extract }}</p>
-    <p>
-      {% load comments %}
-      {% get_comment_count for article as comment_count %}
-      {{ comment_count }}
-    </p>
-  </li>
-  {% endfor %}
-</ul>
-{% else %}
-<p>Sorry this author did not publish any article yet.</p>
-{% endif %}
+{% block informations %}
+dans <a href="{{ article.category.get_absolute_url }}">{{ article.category }}</a>
 {% endblock %}
+
+{% block archive_type %}t auteur{% endblock %}
