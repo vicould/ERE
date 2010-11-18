@@ -1,15 +1,3 @@
-{% if error_message %}
-	<p><strong>{{ error_message }}</strong></p>
-{% endif %}
+{% extends 'layout/article_archive_template.html' %}
 
-{% if tagged_articles_list %}
-  <ul>
-    {% for article in tagged_articles_list %}
-		<li><a href="/blog/{{ article.date.year }}/{{ article.date.month }}/{{ article.id }}/">{{ article.title }}</a>, {{ article.date }}</li>
-		{% endfor %}
-  </ul>
-{% else %}
-  <p>
-		Sorry, no article matching this tag.
-  </p>
-{% endif %}
+{% block archive_type %} tag{% endblock %}

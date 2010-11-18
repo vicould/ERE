@@ -29,9 +29,9 @@ def tag_cloud(request):
     return render_to_response('blog/tag_cloud.html', {'tag_list': tag_list}, context_instance=RequestContext(request))
 
 
-def tag_cloud_result(request, tag_requested):
-    tagged_articles_list = Article.objects.filter(tag__name=tag_requested)
-    return render_to_response('blog/tag_cloud_results.html', {'tagged_articles_list': tagged_articles_list}, context_instance=RequestContext(request))
+def tag_cloud_result(request, tag_name):
+    tagged_articles_list = Article.objects.filter(tag__name=tag_name)
+    return render_to_response('blog/tag_cloud_results.html', {'object_list': tagged_articles_list}, context_instance=RequestContext(request))
 
 
 def author_list(request):

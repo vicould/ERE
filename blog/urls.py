@@ -6,7 +6,8 @@ from ere.blog.feeds import RecentArticlesFeed
 year_re = '(?P<year>\d{4})'
 month_re = '(?P<month>\d{2})'
 article_id_re = '(?P<article_id>\d+)'
-tags_string = 'tags'
+tag_string = 'tags'
+tag_re = '(?P<tag_name>\w+)'
 authors_string = 'authors'
 author_re = '(?P<author>\w+)'
 pages_string = 'pages'
@@ -29,8 +30,8 @@ urlpatterns = patterns('ere.blog.views',
      date_based.archive_month,
      dict(article_query_basis_dictionary.items() + { 'month_format' : '%m' }.items())),
     (r'^%(year_re)s/%(month_re)s/%(article_id_re)s/$' % locals(), 'article_entry'),
-    (r'^%(tags_string)s/$' % locals(), 'tag_cloud'),
-    (r'^%(tags_string)s/(?P<tag_requested>)/$' % locals(), 'tag_cloud_result'),
+    (r'^%(tag_string)s/$' % locals(), 'tag_cloud'),
+    (r'^%(tag_string)s/%(tag_re)s/$' % locals(), 'tag_cloud_result'),
     (r'^%(authors_string)s/$' % locals(), 'author_list'),
     (r'^%(authors_string)s/%(author_re)s/$' % locals(), 'author'),
     (r'^latest/feed/$', RecentArticlesFeed()),
