@@ -16,11 +16,13 @@
           Équipe des Représentants des Élèves
         </div>
         <div id="top_menu">
+          {% load top_menu %}
+
+          {% menu_content as menu_list %}
           <ul>
-            <li><a href="/">Accueil</a></li>
-            <li><a href="/categories">Catégories</a></li>
-            <li><a href="/pages">Pages</a></li>
-            <li><a href="/tags">Tags</a></li>
+            {% for menu in menu_list %}
+            <li><a href="{{ menu.get_absolute_url }}">{{ menu.element }}</a></li>
+            {% endfor %}
           </ul>
         </div>
       </div>
