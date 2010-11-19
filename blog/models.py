@@ -64,14 +64,3 @@ class Article(models.Model):
     def get_absolute_url(self):
         return "/%s/%s/%s/" % (self.date.year, self.date.strftime("%m"), self.id)
 
-class MenuElement(models.Model):
-    element = models.CharField(max_length=20)
-    url_suffix = models.CharField(max_length=100)
-
-    def __unicode__(self):
-        return self.element
-
-    def get_absolute_url(self):
-        return "/%s/" % self.url_suffix
-
-
