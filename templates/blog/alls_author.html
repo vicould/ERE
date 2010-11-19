@@ -8,7 +8,7 @@
 {% if author_list %}
 	{% for author in author_list %}
   <div class="author">
-    <h2><a href="{{ author.get_absolute_url }}">{{ author.user.username }}</a></h2>
+    <h2><a href="{{ ABSOLUTE_URL_ROOT }}/{{ author.get_absolute_url }}">{{ author.user.username }}</a></h2>
     <div class="author_name">{{ author.first_name }} {{ author.last_name }}</div>
     <div class="author_bio">{{ author.bio }}</div>
   </div>

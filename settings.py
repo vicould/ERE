@@ -99,3 +99,4 @@ INSTALLED_APPS = (
     'ere.blog'
 )
 
+ABSOLUTE_URL_ROOT = 'http://webeleves.emse.fr/~ere/'

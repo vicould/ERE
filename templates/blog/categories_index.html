@@ -4,7 +4,7 @@
 <div id="category_list">
 {% for category in categories_list %}
   <div class="category_entry">
-    <h2><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></h2>
+    <h2><a href="{{ ABSOLUTE_URL_ROOT }}/{{ category.get_absolute_url }}">{{ category.name }}</a></h2>
   </div>
 {% endfor %}
 </div>

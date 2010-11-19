@@ -4,7 +4,7 @@
 <div id="article">
   <h2> {{ article_entry.title }} </h2>
   <div id="article_informations">
-    Écrit le {{ article_entry.date|date:"d F Y" }} à {{ article_entry.date|time:"H:i" }} par <a href="/authors/{{ article_entry.author }}">{{ article_entry.author }}</a>
+    Écrit le {{ article_entry.date|date:"d F Y" }} à {{ article_entry.date|time:"H:i" }} par <a href="{{ ABSOLUTE_URL_ROOT }}/authors/{{ article_entry.author }}">{{ article_entry.author }}</a>
   </div>
   <div id="content">
     {{ article_entry.content|safe }}

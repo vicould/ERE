@@ -4,7 +4,7 @@
 <div id="tags">
 {% if tag_list %}
 		{% for tag in tag_list %}
-    <a href="{{ tag.get_absolute_url }}">{{ tag.name }}</a>
+    <a href="{{ ABSOLUTE_URL_ROOT }}/{{ tag.get_absolute_url }}">{{ tag.name }}</a>
 		{% endfor %}
 {% else %}
 Sorry, no tags.

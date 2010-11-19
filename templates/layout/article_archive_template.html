@@ -10,24 +10,24 @@
   {% for article in object_list %}
   <div class="article_{% cycle 'even' 'odd' %}">
     <div class="content_list">
-      <h2><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h2>
+      <h2><a href="{{ ABSOLUTE_URL_ROOT }}/{{ article.get_absolute_url }}">{{ article.title }}</a></h2>
       <div class="article_informations">
         {% block informations %}
-        écrit par <a href="{{ article.author.get_absolute_url }}">{{ article.author }}</a> dans <a href="{{ article.category.get_absolute_url }}">{{ article.category }}</a>
+        écrit par <a href="{{ ABSOLUTE_URL_ROOT }}/{{ article.author.get_absolute_url }}">{{ article.author }}</a> dans <a href="{{ ABSOLUTE_URL_ROOT }}/{{ article.category.get_absolute_url }}">{{ article.category }}</a>
         {% endblock %}
       </div>
       <p class="article_abstract">{{ article.extract }}</p>
       <div class="article_tags">
         <span class="tags_word">Tags :</span>
         {% for tag in article.tag.all %}
-            <a href="{{ tag.get_absolute_url }}">{{ tag.name }}</a>
+        <a href="{{ ABSOLUTE_URL_ROOT }}/{{ tag.get_absolute_url }}">{{ tag.name }}</a>
         {% endfor %}
       </div>
     </div>
     <div class="date_list">
       <span class="day">{{ article.date|date:"d" }}</span>
-      <span class="month"><a href="/{{ article.date.year }}/{{ article.date|date:"m" }}">{{ article.date|date:"M" }}</a></span>
-      <span class="year"><a href="/{{ article.date.year }}">{{ article.date.year }}</a></span>    
+      <span class="month"><a href="{{ ABSOLUTE_URL_ROOT }}/{{ article.date.year }}/{{ article.date|date:"m" }}">{{ article.date|date:"M" }}</a></span>
+      <span class="year"><a href="{{ ABSOLUTE_URL_ROOT }}/{{ article.date.year }}">{{ article.date.year }}</a></span>    
     </div>
   </div>
   {% endfor %}

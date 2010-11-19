@@ -9,9 +9,9 @@
 <div id="article_list">
 <h2>Articles de blog</h2>
 {% for article in related_articles_list %}
-  <h3><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
+  <h3><a href="{{ ABSOLUTE_URL_ROOT }}/{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
   <div class="article_informations">
-    {{ article.date|date:"d F Y" }} par <a href="{{ article.author.get_absolute_url }}">{{ article.author }}</a>
+    {{ article.date|date:"d F Y" }} par <a href="{{ ABSOLUTE_URL_ROOT }}/{{ article.author.get_absolute_url }}">{{ article.author }}</a>
   </div>
   <p class="article_abstract">{{ article.extract }}</p>
 {% endfor %}
@@ -20,7 +20,7 @@
 <div id="page_list">
 <h2>Pages</h2>
 {% for page in related_pages_list %}
-  <h3><a href="{{ page.get_absolute_url }}">{{ page.title }}</a></h3>
+<h3><a href="{{ ABSOLUTE_URL_ROOT }}/{{ page.get_absolute_url }}">{{ page.title }}</a></h3>
   <div class="page_informations">
   </div>
   <p class="page_abstract">{{ page.extract }}</p>
