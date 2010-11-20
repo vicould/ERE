@@ -99,4 +99,7 @@ INSTALLED_APPS = (
     'ere.blog'
 )
 
-ABSOLUTE_URL_ROOT = 'http://webeleves.emse.fr/~ere/'
+try :
+    from ere.local_settings import *
+except:
+    pass
