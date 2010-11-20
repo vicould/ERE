@@ -1,0 +1,152 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ADMINS	settings.py	/^ADMINS = ($/;"	v
+ADMIN_MEDIA_PREFIX	settings.py	/^ADMIN_MEDIA_PREFIX = '\/media\/'$/;"	v
+Article	blog/admin.py	/^        MenuElement$/;"	i
+Article	blog/feeds.py	/^from  ere.blog.models import Article$/;"	i
+Article	blog/models.py	/^class Article(models.Model):$/;"	c
+Article	blog/urls.py	/^from ere.blog.models import Article$/;"	i
+Article	blog/views.py	/^from ere.blog.models import Article, Tag, Author, Category, Page$/;"	i
+ArticleAdmin	blog/admin.py	/^class ArticleAdmin(admin.ModelAdmin):$/;"	c
+Assumed	manage.py	/^    import settings # Assumed to be in the same directory.$/;"	i
+Author	blog/admin.py	/^        MenuElement$/;"	i
+Author	blog/models.py	/^class Author(models.Model):$/;"	c
+Author	blog/views.py	/^from ere.blog.models import Article, Tag, Author, Category, Page$/;"	i
+Category	blog/admin.py	/^        MenuElement$/;"	i
+Category	blog/models.py	/^class Category(models.Model):$/;"	c
+Category	blog/views.py	/^from ere.blog.models import Article, Tag, Author, Category, Page$/;"	i
+Context	blog/views.py	/^from django.template import RequestContext, Context, loader$/;"	i
+DATABASES	settings.py	/^DATABASES = {$/;"	v
+DEBUG	settings.py	/^DEBUG = True$/;"	v
+Feed	blog/feeds.py	/^from django.contrib.syndication.views import Feed$/;"	i
+Http404	blog/views.py	/^from django.http import HttpResponse, Http404$/;"	i
+HttpResponse	blog/views.py	/^from django.http import HttpResponse, Http404$/;"	i
+INSTALLED_APPS	settings.py	/^INSTALLED_APPS = ($/;"	v
+LANGUAGE_CODE	settings.py	/^LANGUAGE_CODE = 'fr-FR'$/;"	v
+MANAGERS	settings.py	/^MANAGERS = ADMINS$/;"	v
+MEDIA_ROOT	settings.py	/^MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'media')$/;"	v
+MEDIA_URL	settings.py	/^MEDIA_URL = '\/site_media\/'$/;"	v
+MIDDLEWARE_CLASSES	settings.py	/^MIDDLEWARE_CLASSES = ($/;"	v
+MenuElement	blog/admin.py	/^        MenuElement$/;"	i
+MenuElement	blog/models.py	/^class MenuElement(models.Model):$/;"	c
+MenuElement	blog/templatetags/top_menu.py	/^from ere.blog.models import MenuElement$/;"	i
+MenuElementsNode	blog/templatetags/top_menu.py	/^class MenuElementsNode(template.Node):$/;"	c
+Page	blog/admin.py	/^        MenuElement$/;"	i
+Page	blog/models.py	/^class Page(models.Model):$/;"	c
+Page	blog/views.py	/^from ere.blog.models import Article, Tag, Author, Category, Page$/;"	i
+ROOT_URLCONF	settings.py	/^ROOT_URLCONF = 'ere.urls'$/;"	v
+RecentArticlesFeed	blog/feeds.py	/^class RecentArticlesFeed(Feed):$/;"	c
+RecentArticlesFeed	blog/urls.py	/^from ere.blog.feeds import RecentArticlesFeed$/;"	i
+RequestContext	blog/views.py	/^from django.template import RequestContext, Context, loader$/;"	i
+SECRET_KEY	settings.py	/^SECRET_KEY = '17z4zf7zpy$97_#^c4gb0%d)!m-=08lic+ctucdy#_=4ls^xo4'$/;"	v
+SITE_ID	settings.py	/^SITE_ID = 1$/;"	v
+SimpleTest	blog/tests.py	/^class SimpleTest(TestCase):$/;"	c
+TEMPLATE_DEBUG	settings.py	/^TEMPLATE_DEBUG = DEBUG$/;"	v
+TEMPLATE_DIRS	settings.py	/^TEMPLATE_DIRS = ($/;"	v
+TEMPLATE_LOADERS	settings.py	/^TEMPLATE_LOADERS = ($/;"	v
+TIME_ZONE	settings.py	/^TIME_ZONE = 'Europe\/Paris'$/;"	v
+Tag	blog/admin.py	/^        MenuElement$/;"	i
+Tag	blog/models.py	/^class Tag(models.Model):$/;"	c
+Tag	blog/views.py	/^from ere.blog.models import Article, Tag, Author, Category, Page$/;"	i
+TestCase	blog/tests.py	/^from django.test import TestCase$/;"	i
+USE_I18N	settings.py	/^USE_I18N = True$/;"	v
+USE_L10N	settings.py	/^USE_L10N = True$/;"	v
+User	blog/admin.py	/^        MenuElement$/;"	i
+User	blog/models.py	/^from django.contrib.auth.models import User$/;"	i
+__init__	blog/templatetags/top_menu.py	/^    def __init__(self, var_name):$/;"	m	class:MenuElementsNode
+__unicode__	blog/models.py	/^    def __unicode__(self):$/;"	m	class:Article	file:
+__unicode__	blog/models.py	/^    def __unicode__(self):$/;"	m	class:Author	file:
+__unicode__	blog/models.py	/^    def __unicode__(self):$/;"	m	class:Category	file:
+__unicode__	blog/models.py	/^    def __unicode__(self):$/;"	m	class:MenuElement	file:
+__unicode__	blog/models.py	/^    def __unicode__(self):$/;"	m	class:Page	file:
+__unicode__	blog/models.py	/^    def __unicode__(self):$/;"	m	class:Tag	file:
+admin	blog/admin.py	/^from django.contrib import admin$/;"	i
+admin	urls.py	/^from django.contrib import admin$/;"	i
+allow_comments	blog/models.py	/^    allow_comments = models.BooleanField(default=True)$/;"	v	class:Article
+allow_comments	blog/models.py	/^    allow_comments = models.BooleanField(default=True)$/;"	v	class:Page
+article_entry	blog/views.py	/^def article_entry(request, year, month, article_id):$/;"	f
+article_id_re	blog/urls.py	/^article_id_re = '(?P<article_id>\\d+)'$/;"	v
+article_query_basis_dictionary	blog/urls.py	/^article_query_basis_dictionary = { 'queryset' : Article.objects.all(), 'date_field' :$/;"	v
+author	blog/models.py	/^    author = models.ForeignKey(Author)$/;"	v	class:Article
+author	blog/views.py	/^def author(request, author):$/;"	f
+author_list	blog/views.py	/^def author_list(request):$/;"	f
+author_re	blog/urls.py	/^author_re = '(?P<author>\\w+)'$/;"	v
+authors_string	blog/urls.py	/^authors_string = 'authors'$/;"	v
+be	manage.py	/^    import settings # Assumed to be in the same directory.$/;"	i
+bio	blog/models.py	/^    bio = models.TextField(blank=True)$/;"	v	class:Author
+categories_index	blog/views.py	/^def categories_index(request):$/;"	f
+category	blog/models.py	/^    category = models.ForeignKey(Category)$/;"	v	class:Article
+category	blog/models.py	/^    category = models.ForeignKey(Category)$/;"	v	class:Page
+category_detail	blog/views.py	/^def category_detail(request, category_name):$/;"	f
+category_re	blog/urls.py	/^category_re = '(?P<category_name>.+)'$/;"	v
+category_string	blog/urls.py	/^category_string = 'categories'$/;"	v
+content	blog/models.py	/^    content = models.TextField()$/;"	v	class:Article
+content	blog/models.py	/^    content = models.TextField()$/;"	v	class:Page
+create_menu	blog/templatetags/top_menu.py	/^def create_menu(parser, token):$/;"	f
+date	blog/models.py	/^    date = models.DateTimeField()$/;"	v	class:Article
+date_based	blog/urls.py	/^from django.views.generic import date_based$/;"	i
+date_hierarchy	blog/admin.py	/^    date_hierarchy = 'date'$/;"	v	class:ArticleAdmin
+description	blog/feeds.py	/^    description = "Flux regroupant les derniers articles du site de l'ERE"$/;"	v	class:RecentArticlesFeed
+directory	manage.py	/^    import settings # Assumed to be in the same directory.$/;"	i
+element	blog/models.py	/^    element = models.CharField(max_length=20)$/;"	v	class:MenuElement
+execute_manager	manage.py	/^from django.core.management import execute_manager$/;"	i
+extract	blog/models.py	/^    extract = models.TextField()$/;"	v	class:Article
+extract	blog/models.py	/^    extract = models.TextField()$/;"	v	class:Page
+fieldsets	blog/admin.py	/^    fieldsets = [$/;"	v	class:ArticleAdmin
+get_absolute_url	blog/models.py	/^    def get_absolute_url(self):$/;"	m	class:Article
+get_absolute_url	blog/models.py	/^    def get_absolute_url(self):$/;"	m	class:Author
+get_absolute_url	blog/models.py	/^    def get_absolute_url(self):$/;"	m	class:Category
+get_absolute_url	blog/models.py	/^    def get_absolute_url(self):$/;"	m	class:MenuElement
+get_absolute_url	blog/models.py	/^    def get_absolute_url(self):$/;"	m	class:Page
+get_absolute_url	blog/models.py	/^    def get_absolute_url(self):$/;"	m	class:Tag
+get_object_or_404	blog/views.py	/^from django.shortcuts import render_to_response, get_object_or_404$/;"	i
+in	manage.py	/^    import settings # Assumed to be in the same directory.$/;"	i
+index	blog/views.py	/^def index(request):$/;"	f
+item_description	blog/feeds.py	/^    def item_description(self, item):$/;"	m	class:RecentArticlesFeed
+items	blog/feeds.py	/^    def items(self):$/;"	m	class:RecentArticlesFeed
+items_title	blog/feeds.py	/^    def items_title(self, item):$/;"	m	class:RecentArticlesFeed
+link	blog/feeds.py	/^    link = "\/"$/;"	v	class:RecentArticlesFeed
+list_display	blog/admin.py	/^    list_display = ('date', 'title', 'author')$/;"	v	class:ArticleAdmin
+list_filter	blog/admin.py	/^    list_filter = ['date']$/;"	v	class:ArticleAdmin
+loader	blog/views.py	/^from django.template import RequestContext, Context, loader$/;"	i
+models	blog/models.py	/^from django.db import models$/;"	i
+month_archive	blog/views.py	/^def month_archive(request, year, month):$/;"	f
+month_re	blog/urls.py	/^month_re = '(?P<month>\\d{2})'$/;"	v
+name	blog/models.py	/^    name = models.CharField(max_length=100)$/;"	v	class:Category
+name	blog/models.py	/^    name = models.CharField(max_length=100)$/;"	v	class:Tag
+os	settings.py	/^import os$/;"	i
+page_entry	blog/views.py	/^def page_entry(request, page_title):$/;"	f
+page_re	blog/urls.py	/^page_re = '(?P<page_title>.+)'$/;"	v
+pages_index	blog/views.py	/^def pages_index(request):$/;"	f
+pages_string	blog/urls.py	/^pages_string = 'pages'$/;"	v
+re	blog/templatetags/top_menu.py	/^import re$/;"	i
+register	blog/templatetags/top_menu.py	/^register = template.Library()$/;"	v
+render	blog/templatetags/top_menu.py	/^    def render(self, context):$/;"	m	class:MenuElementsNode
+render_to_response	blog/views.py	/^from django.shortcuts import render_to_response, get_object_or_404$/;"	i
+same	manage.py	/^    import settings # Assumed to be in the same directory.$/;"	i
+search_fields	blog/admin.py	/^    search_fields = ['title']$/;"	v	class:ArticleAdmin
+settings	manage.py	/^    import settings # Assumed to be in the same directory.$/;"	i
+settings	urls.py	/^from django.conf import settings$/;"	i
+sys	manage.py	/^    import sys$/;"	i
+tag	blog/models.py	/^    tag = models.ManyToManyField(Tag, blank=True)$/;"	v	class:Article
+tag_cloud	blog/views.py	/^def tag_cloud(request):$/;"	f
+tag_cloud_result	blog/views.py	/^def tag_cloud_result(request, tag_name):$/;"	f
+tag_re	blog/urls.py	/^tag_re = '(?P<tag_name>\\w+)'$/;"	v
+tag_string	blog/urls.py	/^tag_string = 'tags'$/;"	v
+template	blog/templatetags/top_menu.py	/^from django import template$/;"	i
+test_basic_addition	blog/tests.py	/^    def test_basic_addition(self):$/;"	m	class:SimpleTest
+the	manage.py	/^    import settings # Assumed to be in the same directory.$/;"	i
+title	blog/feeds.py	/^    title = "Les derniers articles du site de l'ERE"$/;"	v	class:RecentArticlesFeed
+title	blog/models.py	/^    title = models.CharField(max_length=100)$/;"	v	class:Article
+title	blog/models.py	/^    title = models.CharField(max_length=100)$/;"	v	class:Page
+to	manage.py	/^    import settings # Assumed to be in the same directory.$/;"	i
+url_suffix	blog/models.py	/^    url_suffix = models.CharField(max_length=100)$/;"	v	class:MenuElement
+urlpatterns	blog/urls.py	/^urlpatterns = patterns('ere.blog.views',$/;"	v
+urlpatterns	urls.py	/^urlpatterns = patterns('',$/;"	v
+user	blog/models.py	/^    user = models.OneToOneField(User)$/;"	v	class:Author
+year_archive	blog/views.py	/^def year_archive(request, year):$/;"	f
+year_re	blog/urls.py	/^year_re = '(?P<year>\\d{4})'$/;"	v
