@@ -99,3 +99,7 @@ INSTALLED_APPS = (
     'ere.blog'
 )
 
+try:
+    from ere.local_settings import *
+except:
+    pass

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -64,9 +65,10 @@ class Article(models.Model):
     def get_absolute_url(self):
         return "/%s/%s/%s/" % (self.date.year, self.date.strftime("%m"), self.id)
 
-class MenuElement(models.Model):
+class TopMenuElement(models.Model):
     element = models.CharField(max_length=20)
     url_suffix = models.CharField(max_length=100)
+    position = models.IntegerField()
 
     def __unicode__(self):
         return self.element
@@ -74,4 +76,28 @@ class MenuElement(models.Model):
     def get_absolute_url(self):
         return "/%s/" % self.url_suffix
 
+class LeftMenuElement(models.Model):
+    element = models.CharField(max_length=20)
+    url_suffix = models.CharField(max_length=100)
+    position = models.IntegerField()
 
+    def __unicode__(self):
+        return self.element
+
+    def get_absolute_url(self):
+        return "/%s/" % self.url_suffix
+
+class Meeting(models.Model):
+    date = models.DateTimeField()
+    category = models.ForeignKey(Category)
+    description = models.ForeignKey(Article, null=True)
+
+    def __unicode__(self):
+        return u"Réunion du %s, %s" % (self.date.datetime.date.strftime("%A %B %Y"),
+                                        self.category.name)
+
+    def get_absolute_url(self):
+        return "/meetings/%s/%s/%s/%s" % (self.date.datetime.date.year,
+                                       self.date.datetime.date.month,
+                                       self.date.datetime.date.day,
+                                       self.id)

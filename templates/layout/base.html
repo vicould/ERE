@@ -16,11 +16,11 @@
           Équipe des Représentants des Élèves
         </div>
         <div id="top_menu">
-          {% load top_menu %}
+          {% load menu %}
 
-          {% menu_content as menu_list %}
+          {% top_menu_content as top_menu_list %}
           <ul>
-            {% for menu in menu_list %}
+            {% for menu in top_menu_list %}
             <li><a href="{{ menu.get_absolute_url }}">{{ menu.element }}</a></li>
             {% endfor %}
           </ul>
@@ -30,8 +30,12 @@
         <div id="center">
           <div id="left_column">
             <div id="left_menu">
-              Lorem
-              Ipsum
+              {% left_menu_content as left_menu_list %}
+              <ul>
+                {% for menu in left_menu_list %}
+                <li><a href="{{ menu.get_absolute_url }}">{{ menu.element }}</a></li>
+                {% endfor %}
+              </ul>
             </div>
             <div id="left_border">
             </div>

@@ -1,5 +1,5 @@
 from ere.blog.models import Article, Author, Tag, User, Category, Page, \
-        MenuElement
+        TopMenuElement, Meeting, LeftMenuElement
 from django.contrib import admin
 
 
@@ -20,4 +20,6 @@ admin.site.register(Author)
 admin.site.register(Tag)
 admin.site.register(Category)
 admin.site.register(Page)
-admin.site.register(MenuElement)
+admin.site.register(TopMenuElement)
+admin.site.register(Meeting)
+admin.site.register(LeftMenuElement)

@@ -111,10 +111,11 @@ a:active {
 	/* background: #0018a0; */
 }
 
+/* Left column */
 #left_column {
 	float: left;
 	width: 160px;
-	padding: 0px;
+	padding: 10px;
 	overflow: hidden;
 	color: #000;
 	/* border-right: 20px solid #0018a0;
@@ -127,15 +128,39 @@ a:active {
 	width: 140px;
 }
 
-/* #left_border {
-	float: right;
-	width: 20px;
-	height: 80px;
-	background: #0018a0;
-	background: -moz-linear-gradient(left, #0018a0, #0018d0);
-	background: -webkit-gradient(linear, left center, right center, from(#0018a0), to(#0018d0));
-} */
+#left_menu ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
 
+#left_menu li {
+	float: right;
+	margin: 0px;
+	padding: 0px;
+	border-left: 1px solid #c8c8c8;
+	display: inline;
+}
+
+#left_menu a {
+	height: 30px;
+	line-height: 30px;
+	padding: 0px 10px;
+}
+
+#left_menu a:link {text-decoration: none; color:#fff}
+#left_menu a:visited {text-decoration: none; color:#fff}
+#left_menu a:hover {
+	text-decoration: none;
+	color: #0078ff;
+}
+
+#left_menu a:active {
+	text-decoration: none;
+	color: #0078ff;
+}
+
+/* Right column */
 #right_column {
 	float: right;
 	width: 780px;
