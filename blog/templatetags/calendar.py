@@ -13,10 +13,19 @@ class MeetingLlistNode(template.Node):
         self.var_name = var_name
 
     def get_current_5(self):
-        """Gets current 5 objects and reverses the list"""
-        meeting_list = Meeting.objects.all()
+        """Gets current 5 objects"""
+        raw_meeting_list = Meeting.objects.all()
         "TODO filter the meetings to get all the recent entries"
-        meeting_list.reverse()
+        meeting_list = []
+        i = 0
+        now = datetime.datetime.now()
+        for meeting in raw_meeting_list:
+            if (i == 5):
+                break
+            else:
+                if (now < meeting.date):
+                    meeting_list.append(meeting)
+            
         return meeting_list
 
     def render(self, context):

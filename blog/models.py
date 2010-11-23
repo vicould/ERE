@@ -63,29 +63,29 @@ class Article(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return "/%s/%s/%s/" % (self.date.year, self.date.strftime("%m"), self.id)
+        return "/%s/%s/%s" % (self.date.year, self.date.strftime("%m"), self.id)
 
 class TopMenuElement(models.Model):
     element = models.CharField(max_length=20)
-    url_suffix = models.CharField(max_length=100)
+    url_suffix = models.CharField(max_length=100, blank=True) # blank is for home
     position = models.IntegerField()
 
     def __unicode__(self):
         return self.element
 
     def get_absolute_url(self):
-        return "/%s/" % self.url_suffix
+        return "/%s" % self.url_suffix
 
 class LeftMenuElement(models.Model):
     element = models.CharField(max_length=20)
-    url_suffix = models.CharField(max_length=100)
+    url_suffix = models.CharField(max_length=100, blank=True)
     position = models.IntegerField()
 
     def __unicode__(self):
         return self.element
 
     def get_absolute_url(self):
-        return "/%s/" % self.url_suffix
+        return "/%s" % self.url_suffix
 
 class Meeting(models.Model):
     title = models.CharField(max_length=100)
