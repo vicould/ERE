@@ -3,3 +3,4 @@ ______
 
  * Finish the feature agenda
  
+ * bug with the home url: conflict with get_absolute_url which adds a leading and trailing slash
