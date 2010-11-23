@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html, charset=UTF-8" /> 
     <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/style.css" media="screen" />
     {% block extracss %}{% endblock %}
-    <link rel="icon" href="{{ MEDIA_URL }}favicon.png" />
+    <link rel="icon" href="{{ MEDIA_URL }}favicon.ico" />
     {% block extrahead %}{% endblock %}
   </head>
   <body>
@@ -30,7 +30,7 @@
         <div id="center">
           <div id="left_column">
             <div id="left_menu">
-              <h3>Menu</h3>
+              <h4>Menu</h4>
               {% left_menu_content as left_menu_list %}
               <ul>
                 {% for menu in left_menu_list %}
@@ -39,7 +39,7 @@
               </ul>
             </div>
             <div id="meeting_list">
-              <h3>Réunions à venir</h3>
+              <h4>Réunions à venir</h4>
               {% load calendar %}
               {% upcoming_meetings as meeting_list %}
               <ul>

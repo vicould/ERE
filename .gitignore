@@ -1,8 +1,12 @@
 # ignore swap files from vim
 .*.sw[a-z]
+.swp
 
 # ignore compiled files :
 *.pyc
 
 # ignore the database
 #*.db
+
+# ignore the local_settings
+local_settings.py

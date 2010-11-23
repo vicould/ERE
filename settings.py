@@ -1,5 +1,7 @@
 # Django settings for ere project.
 import os
+import sys
+import traceback
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -101,5 +103,8 @@ INSTALLED_APPS = (
 
 try:
     from ere.local_settings import *
+except ImportError:
+    traceback.print_exc(file=sys.stdout) 
+    print u'Unable to import the local_settings'
 except:
     pass

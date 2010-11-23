@@ -25,6 +25,7 @@ def article_entry(request, year, month, article_id):
 
 
 def tag_cloud(request):
+    # TODO : set the size of the elements according to their importance
     tag_list = Tag.objects.all()
     return render_to_response('blog/tag_cloud.html', {'tag_list': tag_list}, context_instance=RequestContext(request))
 
