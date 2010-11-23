@@ -21,9 +21,9 @@ urlpatterns = patterns('',
 )
 
 # used to serve static content when using the development server
-if settings.DEBUG:
-    urlpatterns += patterns('django.views.static',
-            url(r'^site_media/(?P<path>.*)$', 'serve',
-                {'document_root': settings.MEDIA_ROOT}),
-    )
+#if settings.DEBUG:
+#    urlpatterns += patterns('django.views.static',
+#            url(r'^site_media/(?P<path>.*)$', 'serve',
+#                {'document_root': settings.MEDIA_ROOT}),
+#    )
 
