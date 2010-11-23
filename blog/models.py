@@ -88,16 +88,17 @@ class LeftMenuElement(models.Model):
         return "/%s/" % self.url_suffix
 
 class Meeting(models.Model):
+    title = models.CharField(max_length=100)
     date = models.DateTimeField()
     category = models.ForeignKey(Category)
-    description = models.ForeignKey(Article, null=True)
+    description = models.OneToOneField(Article, null=True, blank=True)
 
     def __unicode__(self):
-        return u"Réunion du %s, %s" % (self.date.datetime.date.strftime("%A %B %Y"),
-                                        self.category.name)
+        return self.title
 
     def get_absolute_url(self):
-        return "/meetings/%s/%s/%s/%s" % (self.date.datetime.date.year,
-                                       self.date.datetime.date.month,
-                                       self.date.datetime.date.day,
+        return "/meetings/%s/%s/%s/%s" % (self.date.year,
+                                       self.date.month,
+                                       self.date.day,
                                        self.id)
+

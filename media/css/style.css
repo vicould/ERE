@@ -60,7 +60,7 @@ a:active {
 #top_menu {
 	height: 30px;
 	background: #383838;
-	background: -moz-linear-gradient (top, #383838, #686868);
+	background: -moz-linear-gradient(top, #383838, #686868);
 	background: -webkit-gradient(linear, center top, center bottom, from(#383838), to(#686868));
 	color: #fff;
 	text-transform: uppercase;
@@ -118,44 +118,28 @@ a:active {
 	padding: 10px;
 	overflow: hidden;
 	color: #000;
-	/* border-right: 20px solid #0018a0;
-	border-right: 20px -moz-linear-gradient(top, #0018a0, #0018d0);
-	border-right: 20px -webkit-gradient(linear, center top, center bottom, from(#0018a0), to(#0018d0)); */
 }
 
-#left_menu {
-	float: left;
-	width: 140px;
-}
-
-#left_menu ul {
+#left_column ul {
 	margin: 0px;
 	padding: 0px;
 	list-style-type: none;
 }
 
-#left_menu li {
+#left_column li {
 	float: right;
 	margin: 0px;
 	padding: 0px;
-	border-left: 1px solid #c8c8c8;
-	display: inline;
 }
 
-#left_menu a {
-	height: 30px;
-	line-height: 30px;
-	padding: 0px 10px;
-}
-
-#left_menu a:link {text-decoration: none; color:#fff}
-#left_menu a:visited {text-decoration: none; color:#fff}
-#left_menu a:hover {
+#left_column a:link {text-decoration: none; color:#000}
+#left_column a:visited {text-decoration: none; color:#000}
+#left_column a:hover {
 	text-decoration: none;
 	color: #0078ff;
 }
 
-#left_menu a:active {
+#left_column a:active {
 	text-decoration: none;
 	color: #0078ff;
 }

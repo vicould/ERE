@@ -30,10 +30,23 @@
         <div id="center">
           <div id="left_column">
             <div id="left_menu">
+              <h3>Menu</h3>
               {% left_menu_content as left_menu_list %}
               <ul>
                 {% for menu in left_menu_list %}
                 <li><a href="{{ menu.get_absolute_url }}">{{ menu.element }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div id="meeting_list">
+              <h3>Réunions à venir</h3>
+              {% load calendar %}
+              {% upcoming_meetings as meeting_list %}
+              <ul>
+                {% for meeting in meeting_list %}
+                <li>
+                <a href="{{ meeting.get_absolute_url }}">{{ meeting.title }}, {{ meeting.date|date:"l d N Y"}} {{ meeting.date|time:"H\hi" }}</a>
+                </li>
                 {% endfor %}
               </ul>
             </div>

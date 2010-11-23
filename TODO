@@ -1,7 +1,5 @@
 TODO :
 ______
 
-
- * Add support for the local settings (try to merge absolute ?)
-
- * Use permalink in the models to bind the urls in url.conf to the classes of the model. See http://localhost/~Ludo/django/ref/models/instances.html#django.db.models.permalink for more detail : you can bind the models to the urls using named url patterns and the decoration @models.permalink on the get_absolute_url method.
+ * Finish the feature agenda
+ 
