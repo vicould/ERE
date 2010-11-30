@@ -1,0 +1,9 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+  {% if page_entry %}
+  <h2>{{ page_entry.title }}</h2>
+  {{ page_entry.content|safe }}
+  {% endif %}
+
+{% endblock %}

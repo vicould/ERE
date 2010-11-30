@@ -1,0 +1,29 @@
+/* Extends the master style in order to format the meetings list */
+
+h2 {
+	margin: 10px 0px 0px 0px;
+	padding: 0px;
+}
+
+.content_list {
+	width: 600px;
+	float: left;
+}
+
+.meeting_informations {
+	margin-bottom: 10px;
+	color: #b0b0b0;
+}
+
+.meeting_informations a {
+	color: #b0b0b0;
+}
+
+.meeting_informations a:hover {
+	color: #000;
+}
+
+.meeting_abstract {
+	padding-left: 20px;
+}
+

@@ -2,7 +2,7 @@
 from django.http import HttpResponse, Http404
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext, Context, loader
-from ere.blog.models import Article, Tag, Author, Category, Page
+from ere.blog.models import Article, Tag, Author, Category, Page, Meeting
 
 def index(request):
     latest_entries_list = Article.objects.all().order_by('-date')[:5]
@@ -67,3 +67,15 @@ def category_detail(request, category_name):
     return render_to_response('blog/category_detail.html',
                               {'related_articles_list' : related_articles_list,
                                'related_pages_list' : related_pages_list}, context_instance=RequestContext(request))
+
+def meetings_index(request):
+    meetings_list = Meeting.objects.all()
+    return render_to_response('blog/meetings_index.html', 
+                              {'meetings_list' : meetings_list},
+                             context_instance=RequestContext(request))
+
+def meeting_detail(request, year, month, day, meeting_id):
+    meeting = get_object_or_404(Meeting, date__year=year,
+                                date__month=month, date__day=day,
+                                id=meeting_id)
+    return render_to_response('blog/meeting_entry.html', {'meeting' : meeting}, context_instance=RequestContext(request))

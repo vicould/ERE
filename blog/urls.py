@@ -5,6 +5,7 @@ from ere.blog.feeds import RecentArticlesFeed
 
 year_re = '(?P<year>\d{4})'
 month_re = '(?P<month>\d{2})'
+day_re = '(?P<day>\d{2})'
 article_id_re = '(?P<article_id>\d+)'
 tag_string = 'tags'
 tag_re = '(?P<tag_name>\w+)'
@@ -14,6 +15,8 @@ pages_string = 'pages'
 page_re = '(?P<page_title>.+)'
 category_string = 'categories'
 category_re = '(?P<category_name>.+)'
+date_string = 'meetings'
+meeting_id_re = '(?P<meeting_id>\d+)'
 
 article_query_basis_dictionary = { 'queryset' : Article.objects.all(), 'date_field' :
                      'date'}
@@ -39,5 +42,7 @@ urlpatterns = patterns('ere.blog.views',
     (r'^%(pages_string)s/%(page_re)s/$' % locals(), 'page_entry' ),
     (r'^%(category_string)s/$' % locals(), 'categories_index'),
     (r'^%(category_string)s/%(category_re)s/$' % locals(), 'category_detail'),
-
+    (r'^%(date_string)s/$' % locals(), 'meetings_index'),
+    (r'^%(date_string)s/%(year_re)s/%(month_re)s/%(day_re)s/%(meeting_id_re)s/$' % locals(),
+     'meeting_detail'),
 )

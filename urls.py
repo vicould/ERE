@@ -7,23 +7,23 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
-    (r'^admin/', include(admin.site.urls)),
+    (r'^ere/admin/', include(admin.site.urls)),
 
     # Uncomment the admin/doc line below to enable admin documentation:
-    (r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    (r'^ere/admin/doc/', include('django.contrib.admindocs.urls')),
 
     # For the comments
-    (r'^comments/', include('django.contrib.comments.urls')),
+    (r'^ere/comments/', include('django.contrib.comments.urls')),
 
     # the blog
-    (r'^', include('ere.blog.urls')),
+    (r'^ere/', include('ere.blog.urls')),
 
 )
 
 # used to serve static content when using the development server
 if settings.DEBUG:
     urlpatterns += patterns('django.views.static',
-            url(r'^site_media/(?P<path>.*)$', 'serve',
+            url(r'^ere/site_media/(?P<path>.*)$', 'serve',
                 {'document_root': settings.MEDIA_ROOT}),
     )
 

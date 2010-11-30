@@ -1,0 +1,29 @@
+{% extends 'layout/base.html' %}
+
+{% block extracss %}
+<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/meeting_list.css" media="screen" />
+{% endblock %}
+
+{% block content %}
+<div id="archive">
+  {% if meetings_list %}
+  {% for meeting in meetings_list %}
+  <div class="meeting{% cycle 'even' 'odd' %}">
+    <div class="content_list">
+      <h2><a href="{{ meeting.get_absolute_url }}">{{ meeting.title }}</a></h2>
+      <div class="meeting_informations">
+        {% block informations %}
+          dans <a href="{{ meeting.category.get_absolute_url }}">{{ meeting.category }}</a>
+        {% endblock %}
+      </div>
+      <p class="meeting_abstract">{{ meeting.extract }}</p>
+    </div>
+  </div>
+  {% endfor %}
+  {% else %}
+  <p id="no_archive_found">
+  Désolé, il n'y a plus de réunion.
+  </p>
+  {% endif %}
+</div>
+{% endblock %}
