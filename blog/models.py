@@ -11,7 +11,7 @@ class Author(models.Model):
         return self.user.username
 
     def get_absolute_url(self):
-        return '/ere/authors/%s' % self.user.username
+        return '/~ere/authors/%s' % self.user.username
 
 
 class Tag(models.Model):
@@ -21,7 +21,7 @@ class Tag(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return '/ere/tags/%s' % self.name
+        return '/~ere/tags/%s' % self.name
 
 
 class Category(models.Model):
@@ -31,7 +31,7 @@ class Category(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return '/ere/categories/%s' % self.name
+        return '/~ere/categories/%s' % self.name
 
 
 class Page(models.Model):
@@ -46,7 +46,7 @@ class Page(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return "/ere/pages/%s" % self.title
+        return "/~ere/pages/%s" % self.title
 
 
 class Article(models.Model):
@@ -63,7 +63,7 @@ class Article(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return "/ere/%s/%s/%s" % (self.date.year, self.date.strftime("%m"), self.id)
+        return "/~ere/%s/%s/%s" % (self.date.year, self.date.strftime("%m"), self.id)
 
 class TopMenuElement(models.Model):
     element = models.CharField(max_length=20)
@@ -74,7 +74,7 @@ class TopMenuElement(models.Model):
         return self.element
 
     def get_absolute_url(self):
-        return '/ere/%s' % self.url_suffix
+        return '/~ere/%s' % self.url_suffix
 
 class LeftMenuElement(models.Model):
     element = models.CharField(max_length=20)
@@ -85,7 +85,7 @@ class LeftMenuElement(models.Model):
         return self.element
 
     def get_absolute_url(self):
-        return '/ere/%s' % self.url_suffix
+        return '/~ere/%s' % self.url_suffix
 
 class Meeting(models.Model):
     title = models.CharField(max_length=100)
@@ -97,7 +97,7 @@ class Meeting(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return '/ere/meetings/%s/%s/%s/%s' % (self.date.year,
+        return '/~ere/meetings/%s/%s/%s/%s' % (self.date.year,
                                        self.date.month,
                                        self.date.day,
                                        self.id)
