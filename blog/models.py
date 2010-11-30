@@ -46,7 +46,7 @@ class Page(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return "/pages/%s" % self.title
+        return "/ere/pages/%s" % self.title
 
 
 class Article(models.Model):
@@ -63,7 +63,7 @@ class Article(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return "/%s/%s/%s" % (self.date.year, self.date.strftime("%m"), self.id)
+        return "/ere/%s/%s/%s" % (self.date.year, self.date.strftime("%m"), self.id)
 
 class TopMenuElement(models.Model):
     element = models.CharField(max_length=20)
