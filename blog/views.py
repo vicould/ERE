@@ -1,8 +1,10 @@
+# -*- coding: utf-8 -*-
 # Create your views here.
 from django.http import HttpResponse, Http404
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext, Context, loader
 from ere.blog.models import Article, Tag, Author, Category, Page, Meeting
+
 
 def index(request):
     latest_entries_list = Article.objects.all().order_by('-date')[:5]
@@ -25,9 +27,20 @@ def article_entry(request, year, month, article_id):
 
 
 def tag_cloud(request):
-    # TODO : set the size of the elements according to their importance
     tag_list = Tag.objects.all()
-    return render_to_response('blog/tag_cloud.html', {'tag_list': tag_list}, context_instance=RequestContext(request))
+    tag_dict = {}
+    total_tagged = 0
+
+    for tag_item in tag_list:
+        length = Article.objects.filter(tag__name__exact=tag_item).count()
+        tag_dict = dict(tag_dict.items() + 
+                              { tag_item : length }.items())
+        total_tagged += length
+
+    for tag_entry in tag_dict.iterkeys():
+        tag_dict[tag_entry] = tag_dict[tag_entry]/float(total_tagged)
+    
+    return render_to_response('blog/tag_cloud.html', {'tag_dict': tag_dict}, context_instance=RequestContext(request))
 
 
 def tag_cloud_result(request, tag_name):
@@ -50,14 +63,17 @@ def pages_index(request):
     return render_to_response('blog/pages_index.html', {'pages_list' :
                                                         pages_list}, context_instance=RequestContext(request))
 
+
 def page_entry(request, page_title):
     p = get_object_or_404(Page, title=page_title) 
     return render_to_response('blog/page_entry.html', {'page_entry' : p}, context_instance=RequestContext(request))
+
 
 def categories_index(request):
     categories_list = Category.objects.all()
     return render_to_response('blog/categories_index.html', 
                               {'categories_list' : categories_list}, context_instance=RequestContext(request))
+
 
 def category_detail(request, category_name):
     related_articles_list = \
@@ -68,11 +84,13 @@ def category_detail(request, category_name):
                               {'related_articles_list' : related_articles_list,
                                'related_pages_list' : related_pages_list}, context_instance=RequestContext(request))
 
+
 def meetings_index(request):
     meetings_list = Meeting.objects.all()
     return render_to_response('blog/meetings_index.html', 
                               {'meetings_list' : meetings_list},
                              context_instance=RequestContext(request))
+
 
 def meeting_detail(request, year, month, day, meeting_id):
     meeting = get_object_or_404(Meeting, date__year=year,

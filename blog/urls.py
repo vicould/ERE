@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.conf.urls.defaults import *
 from django.views.generic import date_based
 from ere.blog.models import Article

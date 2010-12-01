@@ -2,9 +2,11 @@
 
 {% block content %}
 <div id="tags">
-{% if tag_list %}
-		{% for tag in tag_list %}
-    <a href="{{ tag.get_absolute_url }}">{{ tag.name }}</a>
+{% if tag_dict %}
+		{% for tag, weight in tag_dict.items %}
+    {% load extra_filters %}
+
+    <span style="font-size: {{ weight|tag_size:'100' }}px;"><a href="{{ tag.get_absolute_url }}">{{ tag.name }}</a></span>
 		{% endfor %}
 {% else %}
 Sorry, no tags.
