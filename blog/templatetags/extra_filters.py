@@ -8,7 +8,7 @@ register = template.Library()
 @register.filter
 def tag_size(relative, arg):
     try:
-    return int(relative * int(arg))
+        return int(relative * int(arg))
     except:
         return u""
 tag_size.is_safe = True
