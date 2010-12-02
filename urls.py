@@ -8,16 +8,16 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
-    (r'^~ere/admin/', include(admin.site.urls)),
+    (r'^admin/', include(admin.site.urls)),
 
     # Uncomment the admin/doc line below to enable admin documentation:
-    (r'^~ere/admin/doc/', include('django.contrib.admindocs.urls')),
+    (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # For the comments
-    (r'^~ere/comments/', include('django.contrib.comments.urls')),
+    (r'^comments/', include('django.contrib.comments.urls')),
 
     # the blog
-    (r'^~ere/', include('ere.blog.urls')),
+    (r'^', include('ere.blog.urls')),
 
 )
 

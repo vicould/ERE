@@ -2,8 +2,9 @@
 	ServerName dev.ludovicdelaveau.fr
 	ServerAdmin webmaster@ludovicdelaveau.fr
 
-	AliasMatch ^/ere/admin_media(/[[\w]+/]*[^/]*\.css) /usr/share/pyshared/django/contrib/admin/media/$1
-	AliasMatch ^/ere/site_media(/[[\w]+/]*[^/]*\.(css|info)) /opt/repos/django/ere/media/$1
+	DocumentRoot /var/www/dev
+	Alias /~ere/admin_media /usr/share/pyshared/django/contrib/admin/media
+	Alias /~ere/site_media /opt/repos/django/ere/media
 	
 	<Directory /opt/repos/django/ere/media/>
 		Order deny,allow
