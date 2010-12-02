@@ -91,9 +91,3 @@ def meetings_index(request):
                               {'meetings_list' : meetings_list},
                              context_instance=RequestContext(request))
 
-
-def meeting_detail(request, year, month, day, meeting_id):
-    meeting = get_object_or_404(Meeting, date__year=year,
-                                date__month=month, date__day=day,
-                                id=meeting_id)
-    return render_to_response('blog/meeting_entry.html', {'meeting' : meeting}, context_instance=RequestContext(request))
