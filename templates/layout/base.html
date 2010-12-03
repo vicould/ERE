@@ -45,7 +45,7 @@
               <ul>
                 {% for meeting in meeting_list %}
                 <li>
-                <a href="{{ meeting.get_absolute_url }}">{{ meeting.title }}, {{ meeting.date|date:"l d N Y"}} {{ meeting.date|time:"H\hi" }}</a>
+                <a href="{{ meeting.get_absolute_url }}">{{ meeting.title }}, {{ meeting.date|date:"d N Y"}}</a>
                 </li>
                 {% endfor %}
               </ul>

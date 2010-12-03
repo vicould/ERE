@@ -1,0 +1,13 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+  {% if debug_dict %}
+  <li>
+    {% for key,value in debug_dict.items %}
+    <ul>
+      {{ key }} : {{ value }}
+    </ul>
+    {% endfor %}
+  </li>
+  {% endif %}
+{% endblock %}

@@ -133,7 +133,7 @@ a:active {
 }
 
 #left_column li {
-	float: right;
+	float: left;
 	margin: 0px;
 	padding: 0px;
 }

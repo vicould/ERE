@@ -13,7 +13,7 @@
     <div class="meeting_informations">
       <div class="meeting_date">Le {{ meeting.date|date:"d F Y" }} à {{ meeting.date|time:"H:i" }} dans <a href="{{ meeting.category.get_absolute_url }}">{{ meeting.category }}</a></div>
       {% if meeting.description %}
-        <div class="meeting_post">Voir l'article associé : <a href="{{ meeting.description.get_aboslute_url }}">{{ meeting.description }}</a></div>
+        <div class="meeting_post">Voir l'article associé : <a href="{{ meeting.description.get_absolute_url }}">{{ meeting.description }}</a></div>
       {% endif %}
     </div>
   </div>

@@ -19,6 +19,8 @@ urlpatterns = patterns('',
     # the blog
     (r'^', include('ere.blog.urls')),
 
+    # debug app
+    (r'^debug', include('ere.debug.urls')),
 )
 
 # used to serve static content when using the development server

@@ -6,25 +6,49 @@
 
 {% block content %}
 
-<div id="article_list">
-<h2>Articles de blog</h2>
-{% for article in related_articles_list %}
-  <h3><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
-  <div class="article_informations">
-    {{ article.date|date:"d F Y" }} par <a href="{{ article.author.get_absolute_url }}">{{ article.author }}</a>
+{% if related_articles_list %}
+  <div id="article_list">
+  <h2>Articles de blog</h2>
+  {% for article in related_articles_list %}
+    <div class="article_{% cycle 'even' 'odd' %}">
+      <h3><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
+      <div class="article_informations">
+        {{ article.date|date:"d F Y" }} par <a href="{{ article.author.get_absolute_url }}">{{ article.author }}</a>
+      </div>
+      <p class="article_abstract">{{ article.extract }}</p>
+    </div>
+  {% endfor %}
   </div>
-  <p class="article_abstract">{{ article.extract }}</p>
-{% endfor %}
-</div>
+{% endif %}
 
-<div id="page_list">
-<h2>Pages</h2>
-{% for page in related_pages_list %}
-  <h3><a href="{{ page.get_absolute_url }}">{{ page.title }}</a></h3>
-  <div class="page_informations">
+{% if related_pages_list %}
+  <div id="page_list">
+  <h2>Pages</h2>
+  {% for page in related_pages_list %}
+    <div class="page_{% cycle 'even' 'odd' %}">
+      <h3><a href="{{ page.get_absolute_url }}">{{ page.title }}</a></h3>
+      <div class="page_informations">
+      </div>
+      <p class="page_abstract">{{ page.extract }}</p>
+    </div>
+  {% endfor %}
   </div>
-  <p class="page_abstract">{{ page.extract }}</p>
-{% endfor %}
+{% endif %}
+
+{% if related_meetings_list %}
+<div id="meeting_list">
+  <h2>Meetings</h2>
+  {% for meeting in related_meetings_list %}
+    <div class="meeting_{% cycle 'even' 'odd' %}">
+      <h3>{{ meeting.title }}</h3>
+      <div class="meeting_informations">
+        <div class="meeting_date">Le {{ meeting.date|date:"d F Y" }} à {{ meeting.date|time:"H:i" }} dans <a href="{{ meeting.category.get_absolute_url }}">{{ meeting.category }}</a></div>
+        {% if meeting.description %}
+          <div class="meeting_post">Voir l'article associé : <a href="{{ meeting.description.get_aboslute_url }}">{{ meeting.description }}</a></div>
+      {% endif %}
+    </div> 
+  {% endfor %}
 </div>
+{% endif %}
 
 {% endblock %}
