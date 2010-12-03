@@ -5,18 +5,16 @@
 {% endblock %}
 
 {% block content %}
-<div id="archive">
+<div id="meeting">
   {% if meetings_list %}
   {% for meeting in meetings_list %}
-  <div class="meeting{% cycle 'even' 'odd' %}">
-    <div class="content_list">
-      <h2><a href="{{ meeting.get_absolute_url }}">{{ meeting.title }}</a></h2>
-      <div class="meeting_informations">
-        {% block informations %}
-          dans <a href="{{ meeting.category.get_absolute_url }}">{{ meeting.category }}</a>
-        {% endblock %}
-      </div>
-      <p class="meeting_abstract">{{ meeting.extract }}</p>
+  <div class="meeting_{% cycle 'even' 'odd' %}">
+    <h2>{{ meeting.title }}</h2>
+    <div class="meeting_informations">
+      <div class="meeting_date">Le {{ meeting.date|date:"d F Y" }} à {{ meeting.date|time:"H:i" }} dans <a href="{{ meeting.category.get_absolute_url }}">{{ meeting.category }}</a></div>
+      {% if meeting.description %}
+        <div class="meeting_post">Voir l'article associé : <a href="{{ meeting.description.get_aboslute_url }}">{{ meeting.description }}</a></div>
+      {% endif %}
     </div>
   </div>
   {% endfor %}

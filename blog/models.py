@@ -99,8 +99,4 @@ class Meeting(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return '/~ere/meetings/%s/%s/%s/%s' % (self.date.year,
-                                       self.date.month,
-                                       self.date.day,
-                                       self.id)
-
+        return '/~ere/meetings'
