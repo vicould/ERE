@@ -8,6 +8,8 @@ from django.template import RequestContext, Context
 def main_debug(request):
     debug_dict = {'host' : request.get_host(),
                   'path' : request.get_full_path(),
+                  'coding' : request.encoding,
+                  'request' : request.method
                  }
     return render_to_response('debug/debug_index.html', 
                               { 'debug_dict' : debug_dict },

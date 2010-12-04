@@ -11,18 +11,18 @@
   </div>
 </div>
 <div id="comments">
-  <a href="#comments">Commentaires</a>
+  <h2><a href="#comments">Commentaires</a></h2>
   {% load comments %}
   {% get_comment_count for article_entry as comment_count %}
   {% if comment_count = 0 %}
-  <p>Personne n'a encore commenté cette page.</p>
+    <p>Personne n'a encore commenté cette page.</p>
   {% else %}
-  {% render_comment_list for article_entry %}
+    {% render_comment_list for article_entry %}
   {% endif %}
 </div>
 {% if article_entry.allow_comments %}
-<div id="comment_form">
+  <div id="comment_form">
   {% render_comment_form for article_entry %}
-</div>
+  </div>
 {% endif %}
 {% endblock %}

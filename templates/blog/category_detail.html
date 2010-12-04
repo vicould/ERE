@@ -13,7 +13,7 @@
     <div class="article_{% cycle 'even' 'odd' %}">
       <h3><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
       <div class="article_informations">
-        {{ article.date|date:"d F Y" }} par <a href="{{ article.author.get_absolute_url }}">{{ article.author }}</a>
+        écrit par <a href="{{ article.author.get_absolute_url }}">{{ article.author }}</a> le {{ article.date|date:"d F Y" }}
       </div>
       <p class="article_abstract">{{ article.extract }}</p>
     </div>
@@ -42,9 +42,10 @@
     <div class="meeting_{% cycle 'even' 'odd' %}">
       <h3>{{ meeting.title }}</h3>
       <div class="meeting_informations">
-        <div class="meeting_date">Le {{ meeting.date|date:"d F Y" }} à {{ meeting.date|time:"H:i" }} dans <a href="{{ meeting.category.get_absolute_url }}">{{ meeting.category }}</a></div>
-        {% if meeting.description %}
-          <div class="meeting_post">Voir l'article associé : <a href="{{ meeting.description.get_aboslute_url }}">{{ meeting.description }}</a></div>
+        Le {{ meeting.date|date:"d F Y" }} à {{ meeting.date|time:"H:i" }} dans <a href="{{ meeting.category.get_absolute_url }}">{{ meeting.category }}</a>
+      </div>
+      {% if meeting.description %}
+        <div class="meeting_post">Voir l'article associé : <a href="{{ meeting.description.get_aboslute_url }}">{{ meeting.description }}</a></div>
       {% endif %}
     </div> 
   {% endfor %}

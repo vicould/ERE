@@ -2,12 +2,12 @@
 
 {% block content %}
   {% if debug_dict %}
-  <li>
+  <ul>
     {% for key,value in debug_dict.items %}
-    <ul>
+    <li>
       {{ key }} : {{ value }}
-    </ul>
+    </li>
     {% endfor %}
-  </li>
+  </ul>
   {% endif %}
 {% endblock %}

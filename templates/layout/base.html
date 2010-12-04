@@ -43,11 +43,11 @@
               {% load calendar %}
               {% upcoming_meetings as meeting_list %}
               <ul>
+                <a href="/~ere/meetings">
                 {% for meeting in meeting_list %}
-                <li>
-                <a href="{{ meeting.get_absolute_url }}">{{ meeting.title }}, {{ meeting.date|date:"d N Y"}}</a>
-                </li>
+                  <li>{{ meeting.title }}, {{ meeting.date|date:"d N Y"}}</li>
                 {% endfor %}
+                </a>
               </ul>
             </div>
             <div id="left_border">
