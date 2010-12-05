@@ -23,8 +23,7 @@ article_query_basis_dictionary = { 'queryset' : Article.objects.all(), 'date_fie
 urlpatterns = patterns('ere.blog.views',
     (r'^$',
      date_based.archive_index,
-     dict(article_query_basis_dictionary.items() + { 'template_object_name' :
-                                            'object_list' }.items())),
+     dict(article_query_basis_dictionary.items() + { 'template_object_name' : 'object_list'}.items())),
     (r'^%(year_re)s/$' % locals(),
      date_based.archive_year,
      dict(article_query_basis_dictionary.items() + { 'make_object_list' : True }.items())),

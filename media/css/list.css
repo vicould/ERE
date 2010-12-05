@@ -25,12 +25,12 @@ h2 {
 
 .article_informations {
 	margin-bottom: 10px;
-	color: #b0b0b0;
+	color: #a0a0a0;
 	font-size: 10pt;
 }
 
 .article_informations a {
-	color: #b0b0b0;
+	color: #a0a0a0;
 }
 
 .article_informations a:hover {
@@ -52,7 +52,7 @@ h2 {
 }
 
 .tags_word {
-	color: #b0b0b0;
+	color: #a0a0a0;
 	text-transform: none;
 }
 

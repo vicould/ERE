@@ -1,0 +1,99 @@
+/* Extends the main style for an article */
+
+h2,h3 {
+	margin: 0px;
+	padding: 0px;
+}
+
+#article {
+	margin: 10px 0px 20px 0px;
+}
+
+#article_header {
+	margin: 0px 0px 10px 0px;
+}
+
+#article_informations {
+	color: #a0a0a0;
+}
+
+#article_informations a {
+	color: #a0a0a0;
+}
+
+#article_informations a:hover {
+	color: #000;
+}
+
+#article_tags {
+	margin: 0px;
+	padding: 0px;
+	display: inline;
+	text-align: left;
+	text-transform: uppercase;
+}
+
+#tags_word {
+	color: #a0a0a0;
+	text-transform: none;
+}
+
+#article_tags a {
+	color: #ff7000;
+}
+
+#article_tags a:hover {
+	color: #000;
+}
+
+/**** COMMENTS ****/
+#comments_wrapper {
+}
+
+#comments {
+	margin: 10px;
+	border: 1px solid #a0a0a0;
+}
+
+.comment_informations {
+	display: inline;
+}
+
+.comment_informations .comment_user {
+	float: left;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.comment_informations .comment_date {
+	float: right;
+	text-align: right;
+}
+
+.comment_content {
+	float: none;
+	margin: 20px 0px 0px 0px;
+}
+
+.comment_even, .comment_odd {
+	padding: 10px;
+}
+
+.comment_even {
+	background-color: #a0a0a0;
+	color: #fff;
+}
+
+#comment_form {
+	margin: 10px;
+}
+
+#comment_form ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+#comment_form .input_element {
+	margin-left: 10px;
+}
