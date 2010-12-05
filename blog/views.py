@@ -77,11 +77,11 @@ def categories_index(request):
 
 def category_detail(request, category_name):
     related_articles_list = \
-        Article.objects.filter(category__name=category_name).order_by('date')
+        Article.objects.filter(category__name=category_name).order_by('-date')
     related_pages_list = \
         Page.objects.filter(category__name=category_name).order_by('title')
     related_meetings_list = \
-        Meeting.objects.filter(category__name=category_name).order_by('date')
+        Meeting.objects.filter(category__name=category_name).order_by('-date')
     return render_to_response('blog/category_detail.html',
                               {'related_articles_list' : related_articles_list,
                                'related_pages_list' : related_pages_list,
@@ -90,7 +90,7 @@ def category_detail(request, category_name):
 
 
 def meetings_index(request):
-    meetings_list = Meeting.objects.all()
+    meetings_list = Meeting.objects.all().order_by('-date')
     return render_to_response('blog/meetings_index.html', 
                               {'meetings_list' : meetings_list},
                              context_instance=RequestContext(request))
