@@ -109,6 +109,8 @@ AUTHENTICATION_BACKENDS = (
             'django.contrib.auth.backends.ModelBackend',
 )
 
+LDAP_SERVER = 'ldap://localhost'
+LDAP_DATE = ''
 
 try:
     from ere.local_settings import *
