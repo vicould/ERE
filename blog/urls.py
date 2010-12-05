@@ -17,13 +17,15 @@ category_string = 'categories'
 category_re = '(?P<category_name>.+)'
 date_string = 'meetings'
 
-article_query_basis_dictionary = { 'queryset' : Article.objects.all(), 'date_field' :
-                     'date'}
+article_query_basis_dictionary = { 'queryset' : Article.objects.all(),
+                                  'date_field' : 'date'}
 
 urlpatterns = patterns('ere.blog.views',
     (r'^$',
      date_based.archive_index,
-     dict(article_query_basis_dictionary.items() + { 'template_object_name' : 'object_list'}.items())),
+     dict(article_query_basis_dictionary.items() +
+          { 'template_object_name' : 'object_list'}.items()),
+     ),
     (r'^%(year_re)s/$' % locals(),
      date_based.archive_year,
      dict(article_query_basis_dictionary.items() + { 'make_object_list' : True }.items())),
@@ -42,3 +44,10 @@ urlpatterns = patterns('ere.blog.views',
     (r'^%(category_string)s/%(category_re)s/$' % locals(), 'category_detail'),
     (r'^%(date_string)s/$' % locals(), 'meetings_index'),
 )
+
+urlpatterns += patterns('django.contrib.auth.views',
+    # Login / logout
+    url(r'^login/$', 'login', name='login'),
+    url(r'^logout/$', 'logout', name='logout'),
+)
+

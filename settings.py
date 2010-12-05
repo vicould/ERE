@@ -109,6 +109,8 @@ AUTHENTICATION_BACKENDS = (
             'django.contrib.auth.backends.ModelBackend',
 )
 
+AUTH_PROFILE_MODULE = 'django.contrib.auth.models.User'
+
 LDAP_SERVER = 'ldap://localhost'
 LDAP_DATE = ''
 

@@ -30,6 +30,12 @@
         <div id="center">
           <div id="left_column">
             <div id="left_menu">
+              <div id="connect">
+                {% if user.is_authenticated %}
+                {{ user.username }}
+                <a href="{% url logout %}" class="logout">Logout</a>
+                {% else %}<a href="{% url login %}" class="login">Login</a>{% endif %}
+              </div>              
               <h4>Menu</h4>
               {% left_menu_content as left_menu_list %}
               <ul>
