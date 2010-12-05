@@ -102,6 +102,14 @@ INSTALLED_APPS = (
     'ere.blog'
 )
 
+AUTHENTICATION_BACKENDS = (
+            # Default backend to LDAP backend
+            'ere.auth.LDAPBackend',
+            # Fallback to ModelBackend if needed
+            'django.contrib.auth.backends.ModelBackend',
+)
+
+
 try:
     from ere.local_settings import *
 except ImportError:
