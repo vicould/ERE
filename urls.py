@@ -21,6 +21,8 @@ urlpatterns = patterns('',
 
     # debug app
     (r'^debug', include('ere.debug.urls')),
+    # authentication
+    (r'^accounts/login/$', 'django.contrib.auth.views.login'),
 )
 
 # used to serve static content when using the development server

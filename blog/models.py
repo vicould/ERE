@@ -40,6 +40,7 @@ class Page(models.Model):
     extract = models.TextField()
     category = models.ForeignKey(Category)
     allow_comments = models.BooleanField(default=True)
+    publish = models.BooleanField(default=True)
 
     def __unicode__(self):
         return self.title
@@ -57,6 +58,7 @@ class Article(models.Model):
     content = models.TextField()
     extract = models.TextField()
     allow_comments = models.BooleanField(default=True)
+    publish = models.BooleanField(default=True)
 
     def __unicode__(self):
         return self.title

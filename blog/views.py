@@ -59,7 +59,7 @@ def author(request, author):
 
 
 def pages_index(request):
-    pages_list = Page.objects.all()
+    pages_list = Page.objects.filter(publish=True)
     return render_to_response('blog/pages_index.html', {'pages_list' :
                                                         pages_list}, context_instance=RequestContext(request))
 

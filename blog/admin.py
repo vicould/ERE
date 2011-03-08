@@ -6,7 +6,7 @@ from django.contrib import admin
 class ArticleAdmin(admin.ModelAdmin):
     fieldsets = [
             ('Content', {'fields' : ['title', 'content', 'author', 'date',
-                                     'extract', 'allow_comments']}),
+                                     'extract', 'allow_comments', 'publish']}),
             ('Classification', {'fields' : ['category', 'tag']})
             ]
     list_display = ('date', 'title', 'author')

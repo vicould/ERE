@@ -17,7 +17,8 @@ category_string = 'categories'
 category_re = '(?P<category_name>.+)'
 date_string = 'meetings'
 
-article_query_basis_dictionary = { 'queryset' : Article.objects.all(),
+article_query_basis_dictionary = { 'queryset' :
+                                  Article.objects.filter(publish=True),
                                   'date_field' : 'date'}
 
 urlpatterns = patterns('ere.blog.views',
