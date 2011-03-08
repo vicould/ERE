@@ -5,7 +5,7 @@ from django.conf import settings
 import ldap
 
 class LDAPBackend(object):
-    """A simple LDAP authentication backend, written by brutasse"""
+    """A simple LDAP authentication backend, from brutasse"""
     def authenticate(self, username=None, password=None):
         if not self.is_valid(username, password):
             return None
@@ -22,10 +22,15 @@ class LDAPBackend(object):
         try:
             l = ldap.initialize(settings.LDAP_SERVER) # ldap://localhost
             dn = 'uid=%s,ou=people,dc=emse,dc=fr' % username
-            l.simple_bind_s(dn, password.decode('utf-8'))
+            try:
+                password = password.decode('utf-8')
+            except UnicodeEncodeError:
+                pass
+            l.simple_bind_s(dn, password)
             l.unbind_s()
             return True
-        except ldap.LDAPError:
+        except ldap.LDAPError as e:
+            print e
             return False
 
 
