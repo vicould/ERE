@@ -115,6 +115,8 @@ LDAP_SERVER = 'ldap://localhost'
 LDAP_DATE = ''
 
 LOGIN_REDIRECT_URL = '/~ere/'
+LOGIN_URL = '/~ere/accounts/login'
+LOGOUT_URL = '/~ere/accounts/logout'
 
 try:
     from ere.local_settings import *
