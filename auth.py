@@ -5,7 +5,7 @@ from django.conf import settings
 import ldap
 
 class LDAPBackend(object):
-    """A simple LDAP authentication backend, from brutasse"""
+    """A simple LDAP authentication backend, inspired by brutasse"""
     def authenticate(self, username=None, password=None):
         if not self.is_valid(username, password):
             return None
@@ -14,8 +14,16 @@ class LDAPBackend(object):
             user = User.objects.get(username=username)
             return user
         except User.DoesNotExist:
-            user = User(username=username, password=password)
+            l = ldap.initialize(settings.LDAP_SERVER)
+            dn = 'uid=%s,ou=people,dc=emse,dc=fr' % username
+            first_name, last_name = l.search_s(dn, ldap.SCOPE_BASE,
+                                               'objectClass=*',\
+ ['givenName', 'initials'])[0][1].values()
+            user = User(username=username, password=password,
+                        first_name=first_name[0],
+                        last_name=last_name[0].capitalize())
             user.save()
+            l.unbind_s()
             return user
 
     def is_valid(self, username, password):
