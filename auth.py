@@ -11,9 +11,12 @@ class LDAPBackend(object):
             return None
 
         try:
-            return User.objects.get(username=username)
+            user = User.objects.get(username=username)
+            return user
         except User.DoesNotExist:
-            return None
+            user = User(username=username, password=password)
+            user.save()
+            return user
 
     def is_valid(self, username, password):
         if password is None or password == '':
@@ -30,7 +33,6 @@ class LDAPBackend(object):
             l.unbind_s()
             return True
         except ldap.LDAPError as e:
-            print e
             return False
 
 
