@@ -23,15 +23,15 @@ article_query_basis_dictionary = { 'queryset' :
 
 urlpatterns = patterns('ere.blog.views',
     (r'^$',
-     date_based.archive_index,
+     'index',
      dict(article_query_basis_dictionary.items() +
           { 'template_object_name' : 'object_list'}.items()),
      ),
     (r'^%(year_re)s/$' % locals(),
-     date_based.archive_year,
+     'year_archive',
      dict(article_query_basis_dictionary.items() + { 'make_object_list' : True }.items())),
     (r'^%(year_re)s/%(month_re)s/$' % locals(),
-     date_based.archive_month,
+     'month_archive',
      dict(article_query_basis_dictionary.items() + { 'month_format' : '%m' }.items())),
     (r'^%(year_re)s/%(month_re)s/%(article_id_re)s/$' % locals(), 'article_entry'),
     (r'^%(tag_string)s/$' % locals(), 'tag_cloud'),
