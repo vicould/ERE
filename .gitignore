@@ -6,7 +6,7 @@
 *.pyc
 
 # ignore the database
-#*.db
+*.db
 
 # ignore the local_settings
 local_settings.py
