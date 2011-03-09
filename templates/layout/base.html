@@ -16,44 +16,42 @@
           Équipe des Représentants des Élèves
         </div>
         <div id="top_menu">
-          {% load menu %}
-
-          {% top_menu_content as top_menu_list %}
           <ul>
-            {% for menu in top_menu_list %}
-            <li><a href="{{ menu.get_absolute_url }}">{{ menu.element }}</a></li>
-            {% endfor %}
+            <li><a href="/~ere/">Accueil</a></li>
+            <li><a href="/~ere/categories/">Catégories</a></li>
+            <li><a href="/~ere/pages/">Pages</a></li>
+            <li><a href="/~ere/meetings/">Réunions</a></li>
+            <li><a href="/~ere/tags/">Tags</a></li>
           </ul>
         </div>
       </div>
       <div id="main_wrapper">
         <div id="center">
           <div id="left_column">
+            {% if user.is_authenticated %}
+            Bonjour {{ user.username }}
+            {% endif %}
             <div id="left_menu">
-              <div id="connect">
-                {% if user.is_authenticated %}
-                {{ user.username }}
-                <a href="{% url logout %}" class="logout">Logout</a>
-                {% else %}<a href="{% url login %}" class="login">Login</a>{% endif %}
-              </div>              
               <h4>Menu</h4>
-              {% left_menu_content as left_menu_list %}
               <ul>
-                {% for menu in left_menu_list %}
-                <li><a href="{{ menu.get_absolute_url }}">{{ menu.element }}</a></li>
-                {% endfor %}
+                {% if user.is_authenticated %}
+                  <li><a href="{% url logout %}" class="logout">Logout</a></li>
+                  {% else %}
+                  <li><a href="{% url login %}" class="login">Login</a></li>
+                {% endif %}
+                {% if user.is_staff %}
+                  <li><a href="/~ere/admin">Admin</a></li>
+                {% endif %}
               </ul>
             </div>
             <div id="meeting_list">
-              <h4>Réunions à venir</h4>
+              <h4><a href="/~ere/meetings">Réunions à venir</a></h4>
               {% load calendar %}
               {% upcoming_meetings as meeting_list %}
               <ul>
-                <a href="/~ere/meetings">
                 {% for meeting in meeting_list %}
-                  <li>{{ meeting.title }}, {{ meeting.date|date:"d N Y"}}</li>
+                <li><a href="/~ere/meetings">{{ meeting.title }}, {{ meeting.date|date:"d N Y"}}</a></li>
                 {% endfor %}
-                </a>
               </ul>
             </div>
             <div id="left_border">

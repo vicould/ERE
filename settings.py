@@ -114,6 +114,8 @@ AUTH_PROFILE_MODULE = 'django.contrib.auth.models.User'
 LDAP_SERVER = 'ldap://localhost'
 LDAP_DATE = ''
 
+LOGIN_REDIRECT_URL = '/~ere/'
+
 try:
     from ere.local_settings import *
 except ImportError:
