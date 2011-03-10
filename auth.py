@@ -16,14 +16,20 @@ class LDAPBackend(object):
         except User.DoesNotExist:
             l = ldap.initialize(settings.LDAP_SERVER)
             dn = 'uid=%s,ou=people,dc=emse,dc=fr' % username
-            first_name, last_name, mail = l.search_s(dn, ldap.SCOPE_BASE,
+            # ldap search result is an array containing one cell, where a tuple
+            # is stored. Interesting element in the tuple is the second one,
+            # which is a dictionary.
+            ldap_result = l.search_s(dn, ldap.SCOPE_BASE,
                                                'objectClass=*',\
- ['givenName', 'initials', 'mail'])[0][1].values()
+ ['givenName', 'initials', 'mail'])[0][1]
+            # every item of the dictionary is enclosed in an array of one cell
+            mail = ldap_result['mail'][0]
+            f
             user = User.objects.create_user(username,
-                                            mail[0],
+                                            ldap_result['mail'][0],
                                             password=password)
-            user.first_name = first_name[0]
-            user.last_name = last_name[0].capitalize()
+            user.first_name = ldap_result['givenName'][0]
+            user.last_name = ldap_result['initials'][0].capitalize()
             user.save()
             l.unbind_s()
             return user
