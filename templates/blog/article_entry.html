@@ -35,7 +35,7 @@
       {% for comment in comment_list %}
         <div class="comment_{% cycle 'even' 'odd' %}">
           <div class="comment_informations">
-            <div class="comment_user">{{ comment.user_name }}</div>
+            <div class="comment_user">{{ comment.user.first_name }} {{ comment.user.last_name }}</div>
             <div class="comment_date">{{ comment.submit_date }}</div>
           </div>
           <div class="comment_content">{{ comment.comment }}</div>
@@ -43,20 +43,23 @@
       {% endfor %}
     {% endif %}
   </div>
-  {% if article_entry.allow_comments %}
+  {% if article_entry.allow_comments and user.is_authenticated %}
     <h3>Poster un commentaire</h3>
     <div id="comment_form">
       {% get_comment_form for article_entry as form %}
-      <ul>
-        <li>{{ form.content_type }}</li>
-        <li>{{ form.object_pk }}</li>
-        <li>{{ form.timestamp }}</li>
-        <li>{{ form.security_hash }}</li>
-        <li>Nom</li>
-        <li class="input_element">{{ form.name }}</li>
-        <li>Commentaire</li>
-        <li class="input_element">{{ form.comment }}</li>
-        <li><span style="display: none;">{{ form.honeypot }}</span></li>
+      <form action="{% comment_form_target %}" method="post">{% csrf_token %}
+        <ul>
+          <li>{{ form.content_type }}</li>
+          <li>{{ form.object_pk }}</li>
+          <li>{{ form.timestamp }}</li>
+          <li>{{ form.security_hash }}</li>
+          <li>Commentaire</li>
+          <li class="input_element">{{ form.comment }}</li>
+          <li><span style="display: none;">{{ form.honeypot }}</span></li>
+          <li class="input_element"><input type="submit" value="Poster" /></li>
+          <div style="show:hidden"><input type="hidden" name="next" value="{{ article_entry.get_absolute_url }}" /></div>
+        </ul>
+      </form>
     </div>
   {% endif %}
 </div>
