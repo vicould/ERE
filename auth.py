@@ -19,11 +19,12 @@ class LDAPBackend(object):
             first_name, last_name, mail = l.search_s(dn, ldap.SCOPE_BASE,
                                                'objectClass=*',\
  ['givenName', 'initials', 'mail'])[0][1].values()
-            user = User.objects.create_user(username=username,
-                                            password=password,
-                                            first_name=first_name[0],
-                                            last_name=last_name[0].capitalize(),
-                                            email=mail[0])
+            user = User.objects.create_user(username,
+                                            mail[0],
+                                            password=password)
+            user.first_name = first_name[0]
+            user.last_name = last_name[0].capitalize()
+            user.save()
             l.unbind_s()
             return user
 
