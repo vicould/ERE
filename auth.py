@@ -24,7 +24,6 @@ class LDAPBackend(object):
  ['givenName', 'initials', 'mail'])[0][1]
             # every item of the dictionary is enclosed in an array of one cell
             mail = ldap_result['mail'][0]
-            f
             user = User.objects.create_user(username,
                                             ldap_result['mail'][0],
                                             password=password)
