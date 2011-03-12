@@ -122,6 +122,11 @@ try:
     from ere.local_settings import *
 except ImportError:
     traceback.print_exc(file=sys.stdout) 
-    print u'Unable to import the local_settings'
+    try:
+        from local_settings import *
+        print 'succesfully imported local_settings without module path'
+    except ImportError:
+        traceback.print_exc(file=sys.stdout)
+        print u'Unable to import the local_settings'
 except:
     pass
